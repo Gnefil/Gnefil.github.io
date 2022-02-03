@@ -106,6 +106,9 @@ deploy:
   type: git
   repo: https://github.com/Gnefil/Gnefil.github.io.git
   branch: main
+  extend_dirs:
+    - themes
+    - config
 
 
 # Internationalization (i18n) Setting
