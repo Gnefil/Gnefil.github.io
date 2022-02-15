@@ -96,10 +96,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://gnefil.github.io/tags/生物学/">
+  <link rel="canonical" href="https://gnefil.github.io/en/Python-parameters-and-arguments/">
   <title>
     
-      GNEFIL
+      Python parameters and arguments - GNEFIL
     
   </title>
 <meta name="generator" content="Hexo 6.0.0"></head>
@@ -247,6 +247,7 @@
           <!-- LangSelect -->
           
           
+          
           <!-- LangSelect start -->
           <!-- LangSelect -->
 <li>
@@ -254,7 +255,7 @@
     <span>
       English
     </span>
-    <select id="lang-select" data-canonical="tags/生物学/index.html">
+    <select id="lang-select" data-canonical="en/Python-parameters-and-arguments/">
       
       
       <option value="en"  selected >
@@ -270,6 +271,7 @@
 </li>
 
           <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -321,19 +323,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg.jpg');
+      --intro-header-background-image-url-post: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg');
+      --intro-header-background-image-url-page: url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg'); */
       
     }
 
@@ -355,10 +357,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>GNEFIL</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Once the legend starts, nothing can stop composing it.</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Python" title="Python">Python</a>
+              
+              <a class="tag" href="/tags/#Arguments" title="Arguments">Arguments</a>
+              
+              <a class="tag" href="/tags/#Parameters" title="Parameters">Parameters</a>
+              
+              <a class="tag" href="/tags/#Functions" title="Functions">Functions</a>
+              
+            </div>
+            <h1>Python parameters and arguments</h1>
+            <h2 class="subheading">Python&#39;s shorten and elegant coding style provides great efficiency to developers when programming, though sometimes (referring to myself) it can be a headache remembering implicit specifications. In particular, I had to fight hard to master python *parameters* and *arguments*.</h2>
+            <span class="meta">
+              Posted by Gnefil Voltexy on
+              2022-02-15
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">6</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+
+
           </div>
           
         </div>
@@ -399,305 +433,203 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h1 id="Parameters-and-arguments"><a href="#Parameters-and-arguments" class="headerlink" title="Parameters and arguments"></a>Parameters and arguments</h1><p>In python, a function and its call may look like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a+b)</span><br><span class="line"></span><br><span class="line"><span class="built_in">sum</span>(<span class="number">3</span>, <span class="number">5</span>) <span class="comment"># Will print: 8</span></span><br></pre></td></tr></table></figure>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+<p>Here, <code>a</code> and <code>b</code> are what is called <strong>formal parameters</strong> which are the values that a function accepts.<code>3</code> and <code>5</code> are <strong>actual parameters</strong> or <strong>arguments</strong> which are the values that are sent into the function. Accordingly, there are several types and rules for parameters and arguments in python which are the topic of this post.</p>
+<hr>
+<h1 id="Formal-parameters"><a href="#Formal-parameters" class="headerlink" title="Formal parameters"></a>Formal parameters</h1><p>These parameters can be classified into <strong>mandatory</strong> or <strong>default</strong> according to whether a default value is assigned in the function declaration. Also, to deal with an unsure number of parameters, functions may have variable-length parameters (<strong>arbitrary parameters</strong>).</p>
+<h2 id="Mandatory-VS-Default-parameters"><a href="#Mandatory-VS-Default-parameters" class="headerlink" title="Mandatory VS Default parameters"></a>Mandatory VS Default parameters</h2><p>Consider the following function:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharing</span>(<span class="params">number, fruit=<span class="string">&quot;apples&quot;</span>, reaction=<span class="string">&quot;won&#x27;t give you any&quot;</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I have &#123;&#125; &#123;&#125;, I &#123;&#125;&quot;</span>.<span class="built_in">format</span>(number, fruit, reaction))</span><br><span class="line"></span><br><span class="line">sharing(<span class="number">3</span>, <span class="string">&quot;oranges&quot;</span>) <span class="comment"># Will print: I have 3 oranges, I won&#x27;t give you any</span></span><br></pre></td></tr></table></figure>
 
-      
+<h3 id="Mandatory"><a href="#Mandatory" class="headerlink" title="Mandatory"></a>Mandatory</h3><p>We notice that two of the parameters have an equal sign <code>=</code> with them, they are the default parameters, or the <em>optional</em> parameters. Being a default parameter means they are <strong>not necessarily passed</strong> when calling the function, like <code>reaction</code>, it is assigned with the default string if no argument is passed when calling <code>sharing</code>. Of course, they can be assigned when calling and will be overridden by the new value, in this case, <code>fruit</code> becomes <code>oranges</code> instead of <code>apples</code>.</p>
+<h3 id="Default"><a href="#Default" class="headerlink" title="Default"></a>Default</h3><p>Another kind of parameter is <strong>mandatory assigned</strong>, as an example, <code>number</code> here. These parameters are required when calling the function, otherwise will raise an error.</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">Note</span> that <span class="keyword">default</span> parameters must appear <span class="keyword">after</span> mandatory parameters.</span><br></pre></td></tr></table></figure>
 
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
-          <span class="tag-text">2022</span>
-        </span>
-        <ul>
+<h2 id="Arbitrary-positional-x2F-keyword-parameters"><a href="#Arbitrary-positional-x2F-keyword-parameters" class="headerlink" title="Arbitrary positional&#x2F;keyword parameters"></a>Arbitrary positional&#x2F;keyword parameters</h2><p>Sometimes, we want to pass a variable length of arguments when we are unsure of the number of values is being sent, here is when arbitrary parameters enter in the game.</p>
+<h3 id="Positional"><a href="#Positional" class="headerlink" title="Positional"></a>Positional</h3><p>Arbitrary positional parameters are declared by one asterisk (*) followed by the name of the variable containing this arbitrary parameter. For example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">juicy</span>(<span class="params">filler, *fruits</span>):</span></span><br><span class="line">    <span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:</span><br><span class="line">        <span class="built_in">print</span>(fruit+<span class="string">&quot; is juicy&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Will print: </span></span><br><span class="line"><span class="comment"># Watermelon is juicy</span></span><br><span class="line"><span class="comment"># Orange is juicy</span></span><br><span class="line"><span class="comment"># Grapes is juicy</span></span><br><span class="line">juicy(<span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Watermelon&quot;</span>, <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Grapes&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>The rule to “collect” values from the caller is, <strong>after</strong> processing all retrievable arguments for parameters that are before the arbitrary positional parameters. In this example, <code>&quot;Apple&quot;</code> is filled into <code>filler</code>, and the rest of the arguments are then included in <code>*fruits</code>. This kind of parameter is characterised by grouping into a tuple and can be taken out simply with a loop.</p>
+<h3 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h3><p>The second kind of arbitrary parameter is called the arbitrary keyword parameter. This is very similar to the previous one, only that it is stored as <strong>key-value pairs</strong>, hence the word “keyword”. Another example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fruit_colour</span>(<span class="params">**fruits</span>):</span></span><br><span class="line">    <span class="keyword">for</span> fruit, colour <span class="keyword">in</span> fruits.items():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;&#123;&#125; is &#123;&#125;&quot;</span>.<span class="built_in">format</span>(fruit, colour))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Will print:</span></span><br><span class="line"><span class="comment"># Apple is red</span></span><br><span class="line"><span class="comment"># Orange is orange</span></span><br><span class="line"><span class="comment"># Banana is yellow</span></span><br><span class="line">fruit_colour(Apple = <span class="string">&quot;red&quot;</span>, Orange = <span class="string">&quot;orange&quot;</span>, Banana = <span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Note that arbitrary parameters must be <span class="keyword">unique</span> <span class="keyword">in</span> <span class="keyword">each</span> <span class="keyword">function</span> <span class="keyword">and</span> <span class="keyword">are</span> <span class="keyword">in</span> the <span class="keyword">last</span> positions <span class="keyword">of</span> the <span class="keyword">parameter</span> list.</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Actual-parameters-Arguments"><a href="#Actual-parameters-Arguments" class="headerlink" title="Actual parameters (Arguments)"></a>Actual parameters (Arguments)</h1><p>Values that are passed in the calling of the function are the arguments. They can also be classified by the way they are assigned into the parameters, into <strong>positional</strong> or <strong>keyword</strong>.</p>
+<p>Furthermore, the arguments can be strictly defined into <strong>positional-only</strong>, <strong>positional or keyword</strong>, or <strong>keyword-only</strong>.</p>
+<h2 id="Positional-VS-Keyword"><a href="#Positional-VS-Keyword" class="headerlink" title="Positional VS Keyword"></a>Positional VS Keyword</h2><p>Consider the following function:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharing</span>(<span class="params">number, colour=<span class="string">&quot;red&quot;</span>, fruit=<span class="string">&quot;apples&quot;</span>, reaction=<span class="string">&quot;won&#x27;t give you any&quot;</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I have &#123;&#125; &#123;&#125; &#123;&#125;, I &#123;&#125;&quot;</span>.<span class="built_in">format</span>(number, colour, fruit, reaction))</span><br><span class="line"></span><br><span class="line">sharing(<span class="number">3</span>, <span class="string">&quot;green&quot;</span>, reaction=<span class="string">&quot;will give you some&quot;</span>, fruit=<span class="string">&quot;oranges&quot;</span>) <span class="comment"># Will output: I have 3 green oranges, I will give you some</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Positional-1"><a href="#Positional-1" class="headerlink" title="Positional"></a>Positional</h3><p>We see the regular way of passing arguments, by fixing the exact position of the arguments into the parameters we want them to be, e.g. <code>3</code> for <code>number</code> and <code>green</code> for colour. They are matched according to the exact order as they are passed to the exact order of the parameter list.</p>
+<p> Note that: suppose <code>def f(a = 2, b = 4)</code> and calling with <code>f(5, a = 1) # Raises error</code>. You shouldn’t assign an later default parameters <code>b</code> by positional arguments when having preceding default parameter <code>a</code> assigned with keyword argument, because the compiler will think both <code>5</code> and <code>= 1</code> is for <code>a</code>.</p>
+<h3 id="Keyword-1"><a href="#Keyword-1" class="headerlink" title="Keyword"></a>Keyword</h3><p>Another way of assigning is to directly “extract” the variable we want to assign and assign it with <code>=</code>, this is the case of <code>reaction</code> and <code>fruit</code>. Using this kind of argument let you ignore the relative positions of the parameters, in the above example I placed <code>reaction</code> before <code>fruit</code> although the order is not equal to when declared.</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Note that <span class="keyword">the</span> keyword arguments must be <span class="keyword">after</span> <span class="keyword">the</span> positional arguments.</span><br></pre></td></tr></table></figure>
+<h2 id="Positional-only-positional-or-keyword-or-keyword-only"><a href="#Positional-only-positional-or-keyword-or-keyword-only" class="headerlink" title="Positional-only, positional or keyword, or keyword-only"></a>Positional-only, positional or keyword, or keyword-only</h2><p>This technique is used when we want to strictly separate the arguments by limiting the ways they can assign to parameters. Following is an example using all three kind of function:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">a, b, /, c, d, *, f, e</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a+b+c+d+e+f)</span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, <span class="number">6</span>, <span class="number">5</span>, d=<span class="number">6</span>, e = <span class="number">2</span>, f = <span class="number">10</span>) <span class="comment"># Will print: 30 </span></span><br></pre></td></tr></table></figure>
+
+<p>Even seem daunting, we can still use the parameters and arguments strategies (like default parameters) mentioned before, in this pattern.</p>
+<ul>
+<li><em><strong>Positional-only</strong></em>: These are marked by the start of parameter list until <code>/</code>, in this example <code>a</code> and <code>b</code>. They must be assigned positional arguments. This can be useful when the order of the arguments is fundamental and we don’t care about the arguments name (maybe no real meaning).</li>
+<li><em><strong>Positional or keyword</strong></em>: Limited by <code>/</code> and <code>*</code>, they can use positional or keyword arguments, in this example <code>c</code> and <code>d</code>. </li>
+<li><em><strong>Keyword-only</strong></em>: They can only be assigned using a keyword like <code>e</code> and <code>f</code>. It is important in the case when we want to prevent entering values by position or when the name of the variable has essential importance.</li>
+</ul>
+<hr>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Parameters and arguments is not a hard topic in python, though it can be a bit tricky if we overlook them. This is a summary post mainly to remind me of distinct types of parameters and arguments.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            02-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/zh/Python-parameters-and-arguments/" style="color: #0085a1">
-              <span>
-                Python parameters and arguments
-                
-                -- zh
-                
-              </span>
-            </a>
+          <li class="previous">
+            <!-- to be changed -->
+            <a href="/zh/Python-parameters-and-arguments/" data-toggle="tooltip" data-placement="top" title="Python parameters and arguments">&larr; Previous Post</a>
           </li>
           
-          <li>
-            02-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Python-parameters-and-arguments/" style="color: #0085a1">
-              <span>
-                Python parameters and arguments
-                
-              </span>
-            </a>
-          </li>
           
-          <li>
-            02-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/zh/Patterning-in-vertebrates-anterior-posterior-axis/" style="color: #0085a1">
-              <span>
-                Patterning in vertebrates anterior-posterior axis
-                
-                -- zh
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            02-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/en/Patterning-in-vertebrates-anterior-posterior-axis/" style="color: #0085a1">
-              <span>
-                Patterning in vertebrates anterior-posterior axis
-                
-              </span>
-            </a>
+          <li class="next">
+            <a href="/zh/Patterning-in-vertebrates-anterior-posterior-axis/" data-toggle="tooltip" data-placement="top" title="Patterning in vertebrates anterior-posterior axis">Next Post &rarr;</a>
           </li>
           
         </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
-    </div>
-  </div>
-</div>
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Parameters-and-arguments"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Parameters and arguments</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Formal-parameters"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Formal parameters</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Mandatory-VS-Default-parameters"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Mandatory VS Default parameters</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mandatory"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">Mandatory</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Default"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">Default</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Arbitrary-positional-x2F-keyword-parameters"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Arbitrary positional&#x2F;keyword parameters</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Positional"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">Positional</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Keyword"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">Keyword</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Actual-parameters-Arguments"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Actual parameters (Arguments)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Positional-VS-Keyword"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Positional VS Keyword</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Positional-1"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">Positional</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Keyword-1"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">Keyword</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Positional-only-positional-or-keyword-or-keyword-only"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Positional-only, positional or keyword, or keyword-only</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Conclusion"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Conclusion</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Python" title="Python">Python</a>
+            
+            <a class="tag" href="/tags/#Arguments" title="Arguments">Arguments</a>
+            
+            <a class="tag" href="/tags/#Parameters" title="Parameters">Parameters</a>
+            
+            <a class="tag" href="/tags/#Functions" title="Functions">Functions</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Biology" title="Biology" rel="1">Biology</a>
-    
-    
-    
-    <a href="/tags/#Neuroscience" title="Neuroscience" rel="1">Neuroscience</a>
-    
-    
-    
-    <a href="/tags/#Developmental Biology" title="Developmental Biology" rel="1">Developmental Biology</a>
-    
-    
-    
-    <a href="/tags/#Patterning" title="Patterning" rel="1">Patterning</a>
-    
-    
-    
-    <a href="/tags/#How to Make a Brain" title="How to Make a Brain" rel="1">How to Make a Brain</a>
-    
-    
-    
-    <a href="/tags/#Python" title="Python" rel="1">Python</a>
-    
-    
-    
-    <a href="/tags/#Arguments" title="Arguments" rel="1">Arguments</a>
-    
-    
-    
-    <a href="/tags/#Parameters" title="Parameters" rel="1">Parameters</a>
-    
-    
-    
-    <a href="/tags/#Functions" title="Functions" rel="1">Functions</a>
-    
-    
-    
-    <a href="/tags/#生物学" title="生物学" rel="1">生物学</a>
-    
-    
-    
-    <a href="/tags/#神经科学" title="神经科学" rel="1">神经科学</a>
-    
-    
-    
-    <a href="/tags/#发育生物学" title="发育生物学" rel="1">发育生物学</a>
-    
-    
-    
-    <a href="/tags/#模式化" title="模式化" rel="1">模式化</a>
-    
-    
-    
-    <a href="/tags/#如何制作大脑" title="如何制作大脑" rel="1">如何制作大脑</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/1412.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Hi there, I am Gnefil, a computer science student, welcome! I am a learner and truth seeker, curious in almost everything, especially in IT and neuronal science. Hope you can find something interesting here too!</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../zh/Python-parameters-and-arguments/">
-      <li>Python parameters and arguments</li>
-    </a>
-    
-    <a href="../../en/Python-parameters-and-arguments/">
-      <li>Python parameters and arguments</li>
-    </a>
-    
-    <a href="../../zh/Patterning-in-vertebrates-anterior-posterior-axis/">
-      <li>Patterning in vertebrates anterior-posterior axis</li>
-    </a>
-    
-    <a href="../../en/Patterning-in-vertebrates-anterior-posterior-axis/">
-      <li>Patterning in vertebrates anterior-posterior axis</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://kirisamer.github.io/" target="_blank">Random Linear Space</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/02/">February 2022</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Neuroscience">
-      <li>Neuroscience</li>
-    </a>
-    
-    <a href="/categories/#Python">
-      <li>Python</li>
-    </a>
-    
-    <a href="/categories/#神经科学">
-      <li>神经科学</li>
-    </a>
-    
-    <a href="/categories/#How to Make a Brain">
-      <li>How to Make a Brain</li>
-    </a>
-    
-    <a href="/categories/#Handy Tips">
-      <li>Handy Tips</li>
-    </a>
-    
-    <a href="/categories/#如何制造大脑">
-      <li>如何制造大脑</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://kirisamer.github.io/" target="_blank">Random Linear Space</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
