@@ -191,6 +191,19 @@
 
           
           
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           <li>
             <a href="/archive/">
               
@@ -199,8 +212,6 @@
               
             </a>
           </li>
-          
-          
           
           
           
@@ -219,17 +230,6 @@
             <a href="/about/">
               
               ABOUT
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
               
               
             </a>
@@ -370,7 +370,7 @@
               
             </div>
             <h1>Python parameters and arguments</h1>
-            <h2 class="subheading">Python&#39;s shorten and elegant coding style provides great efficiency to developers when programming, though sometimes (referring to myself) it can be a headache remembering implicit specifications. In particular, I had to fight hard to master python *parameters* and *arguments*.</h2>
+            <h2 class="subheading">Python&#39;s shorten and elegant coding style provides great efficiency to developers when programming, though sometimes (referring to myself) it can be a headache remembering implicit specifications. In particular, I had to fight hard to master python parameters and arguments.</h2>
             <span class="meta">
               Posted by Gnefil Voltexy on
               2022-02-15
@@ -452,8 +452,7 @@
 
 <h3 id="Mandatory"><a href="#Mandatory" class="headerlink" title="Mandatory"></a>Mandatory</h3><p>We notice that two of the parameters have an equal sign <code>=</code> with them, they are the default parameters, or the <em>optional</em> parameters. Being a default parameter means they are <strong>not necessarily passed</strong> when calling the function, like <code>reaction</code>, it is assigned with the default string if no argument is passed when calling <code>sharing</code>. Of course, they can be assigned when calling and will be overridden by the new value, in this case, <code>fruit</code> becomes <code>oranges</code> instead of <code>apples</code>.</p>
 <h3 id="Default"><a href="#Default" class="headerlink" title="Default"></a>Default</h3><p>Another kind of parameter is <strong>mandatory assigned</strong>, as an example, <code>number</code> here. These parameters are required when calling the function, otherwise will raise an error.</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">Note</span> that <span class="keyword">default</span> parameters must appear <span class="keyword">after</span> mandatory parameters.</span><br></pre></td></tr></table></figure>
-
+<p>Note that: default parameters must appear after mandatory parameters.</p>
 <h2 id="Arbitrary-positional-x2F-keyword-parameters"><a href="#Arbitrary-positional-x2F-keyword-parameters" class="headerlink" title="Arbitrary positional&#x2F;keyword parameters"></a>Arbitrary positional&#x2F;keyword parameters</h2><p>Sometimes, we want to pass a variable length of arguments when we are unsure of the number of values is being sent, here is when arbitrary parameters enter in the game.</p>
 <h3 id="Positional"><a href="#Positional" class="headerlink" title="Positional"></a>Positional</h3><p>Arbitrary positional parameters are declared by one asterisk (*) followed by the name of the variable containing this arbitrary parameter. For example:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">juicy</span>(<span class="params">filler, *fruits</span>):</span></span><br><span class="line">    <span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:</span><br><span class="line">        <span class="built_in">print</span>(fruit+<span class="string">&quot; is juicy&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Will print: </span></span><br><span class="line"><span class="comment"># Watermelon is juicy</span></span><br><span class="line"><span class="comment"># Orange is juicy</span></span><br><span class="line"><span class="comment"># Grapes is juicy</span></span><br><span class="line">juicy(<span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Watermelon&quot;</span>, <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Grapes&quot;</span>)</span><br></pre></td></tr></table></figure>
@@ -462,7 +461,8 @@
 <h3 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h3><p>The second kind of arbitrary parameter is called the arbitrary keyword parameter. This is very similar to the previous one, only that it is stored as <strong>key-value pairs</strong>, hence the word “keyword”. Another example:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fruit_colour</span>(<span class="params">**fruits</span>):</span></span><br><span class="line">    <span class="keyword">for</span> fruit, colour <span class="keyword">in</span> fruits.items():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;&#123;&#125; is &#123;&#125;&quot;</span>.<span class="built_in">format</span>(fruit, colour))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Will print:</span></span><br><span class="line"><span class="comment"># Apple is red</span></span><br><span class="line"><span class="comment"># Orange is orange</span></span><br><span class="line"><span class="comment"># Banana is yellow</span></span><br><span class="line">fruit_colour(Apple = <span class="string">&quot;red&quot;</span>, Orange = <span class="string">&quot;orange&quot;</span>, Banana = <span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Note that arbitrary parameters must be <span class="keyword">unique</span> <span class="keyword">in</span> <span class="keyword">each</span> <span class="keyword">function</span> <span class="keyword">and</span> <span class="keyword">are</span> <span class="keyword">in</span> the <span class="keyword">last</span> positions <span class="keyword">of</span> the <span class="keyword">parameter</span> list.</span><br></pre></td></tr></table></figure>
+
+<p>Note that: arbitrary parameters must be unique in each function and are in the last positions of the parameter list.</p>
 <hr>
 <h1 id="Actual-parameters-Arguments"><a href="#Actual-parameters-Arguments" class="headerlink" title="Actual parameters (Arguments)"></a>Actual parameters (Arguments)</h1><p>Values that are passed in the calling of the function are the arguments. They can also be classified by the way they are assigned into the parameters, into <strong>positional</strong> or <strong>keyword</strong>.</p>
 <p>Furthermore, the arguments can be strictly defined into <strong>positional-only</strong>, <strong>positional or keyword</strong>, or <strong>keyword-only</strong>.</p>
@@ -470,9 +470,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharing</span>(<span class="params">number, colour=<span class="string">&quot;red&quot;</span>, fruit=<span class="string">&quot;apples&quot;</span>, reaction=<span class="string">&quot;won&#x27;t give you any&quot;</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I have &#123;&#125; &#123;&#125; &#123;&#125;, I &#123;&#125;&quot;</span>.<span class="built_in">format</span>(number, colour, fruit, reaction))</span><br><span class="line"></span><br><span class="line">sharing(<span class="number">3</span>, <span class="string">&quot;green&quot;</span>, reaction=<span class="string">&quot;will give you some&quot;</span>, fruit=<span class="string">&quot;oranges&quot;</span>) <span class="comment"># Will output: I have 3 green oranges, I will give you some</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="Positional-1"><a href="#Positional-1" class="headerlink" title="Positional"></a>Positional</h3><p>We see the regular way of passing arguments, by fixing the exact position of the arguments into the parameters we want them to be, e.g. <code>3</code> for <code>number</code> and <code>green</code> for colour. They are matched according to the exact order as they are passed to the exact order of the parameter list.</p>
-<p> Note that: suppose <code>def f(a = 2, b = 4)</code> and calling with <code>f(5, a = 1) # Raises error</code>. You shouldn’t assign an later default parameters <code>b</code> by positional arguments when having preceding default parameter <code>a</code> assigned with keyword argument, because the compiler will think both <code>5</code> and <code>= 1</code> is for <code>a</code>.</p>
+<p>Note that: suppose <code>def f(a = 2, b = 4)</code> and calling with <code>f(5, a = 1) # Raises error</code>. You shouldn’t assign an later default parameters <code>b</code> by positional arguments when having preceding default parameter <code>a</code> assigned with keyword argument, because the compiler will think both <code>5</code> and <code>= 1</code> is for <code>a</code>.</p>
 <h3 id="Keyword-1"><a href="#Keyword-1" class="headerlink" title="Keyword"></a>Keyword</h3><p>Another way of assigning is to directly “extract” the variable we want to assign and assign it with <code>=</code>, this is the case of <code>reaction</code> and <code>fruit</code>. Using this kind of argument let you ignore the relative positions of the parameters, in the above example I placed <code>reaction</code> before <code>fruit</code> although the order is not equal to when declared.</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Note that <span class="keyword">the</span> keyword arguments must be <span class="keyword">after</span> <span class="keyword">the</span> positional arguments.</span><br></pre></td></tr></table></figure>
+<p>Note that: the keyword arguments must be after the positional arguments.</p>
 <h2 id="Positional-only-positional-or-keyword-or-keyword-only"><a href="#Positional-only-positional-or-keyword-or-keyword-only" class="headerlink" title="Positional-only, positional or keyword, or keyword-only"></a>Positional-only, positional or keyword, or keyword-only</h2><p>This technique is used when we want to strictly separate the arguments by limiting the ways they can assign to parameters. Following is an example using all three kind of function:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">a, b, /, c, d, *, f, e</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a+b+c+d+e+f)</span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, <span class="number">6</span>, <span class="number">5</span>, d=<span class="number">6</span>, e = <span class="number">2</span>, f = <span class="number">10</span>) <span class="comment"># Will print: 30 </span></span><br></pre></td></tr></table></figure>
 
