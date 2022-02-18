@@ -205,17 +205,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/tags/">
               
               标签
@@ -230,6 +219,17 @@
             <a href="/about/">
               
               关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
               
               
             </a>
@@ -323,19 +323,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg.jpg');
+      --intro-header-background-image-url-post: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg');
+      --intro-header-background-image-url-page: url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url(''); */
+        /* background-image: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/main/img/post_images/python_parameters_arguments_bg.jpg'); */
       
     }
 
@@ -360,9 +360,17 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/tags/#Python" title="Python">Python</a>
+              
+              <a class="tag" href="/tags/#参数" title="参数">参数</a>
+              
+              <a class="tag" href="/tags/#形参" title="形参">形参</a>
+              
+              <a class="tag" href="/tags/#实参" title="实参">实参</a>
+              
             </div>
             <h1>Python parameters and arguments</h1>
-            <h2 class="subheading">博主正在赶稿！</h2>
+            <h2 class="subheading">Python 简洁优雅的编码风格为开发者在编程时提供了极大的效率，尽管有时（指我自己）记住隐含的规范也是一件令人头疼的事。对于我来说，其中一个例子就是掌握Python的形参和实参。</h2>
             <span class="meta">
               Posted by Gnefil Voltexy on
               2022-02-15
@@ -373,11 +381,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">6</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">0</span> In Total
+              Words <span class="post-count">1.6k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -433,7 +441,50 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        
+        <h1 id="参数和参数"><a href="#参数和参数" class="headerlink" title="参数和参数"></a>参数和参数</h1><p>在Python中，一个函数和它的调用可能看起来像这样。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a+b)</span><br><span class="line"></span><br><span class="line"><span class="built_in">sum</span>(<span class="number">3</span>, <span class="number">5</span>) <span class="comment"># Will print: 8</span></span><br></pre></td></tr></table></figure>
+
+<p>这里，<code>a</code>和<code>b</code>是所谓的<strong>形式参数，是函数接受的值</strong>。<code>3</code>和<code>5</code>是<strong>实际参数</strong>，是被送入函数的值。因此，在Python中，形参和实参有几种类型和规则，这便是本帖的主题。</p>
+<hr>
+<h2 id="形式参数"><a href="#形式参数" class="headerlink" title="形式参数"></a>形式参数</h2><p>这些形参可以根据在函数声明中是否分配了默认值，分为<strong>强制</strong>和<strong>默认</strong>。另外，为了处理形参数量不确定的问题，函数可以有可变长度的形参（<strong>任意形参</strong>）。</p>
+<h3 id="强制形参-VS-默认形参"><a href="#强制形参-VS-默认形参" class="headerlink" title="强制形参 VS 默认形参"></a>强制形参 VS 默认形参</h3><p>考虑以下这个函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharing</span>(<span class="params">number, fruit=<span class="string">&quot;apples&quot;</span>, reaction=<span class="string">&quot;won&#x27;t give you any&quot;</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I have &#123;&#125; &#123;&#125;, I &#123;&#125;&quot;</span>.<span class="built_in">format</span>(number, fruit, reaction))</span><br><span class="line"></span><br><span class="line">sharing(<span class="number">3</span>, <span class="string">&quot;oranges&quot;</span>) <span class="comment"># Will print: I have 3 oranges, I won&#x27;t give you any</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>我们注意到，有两个形参带有等号<code>=</code>，它们是默认形参，或者说是<strong>可选择的形参</strong>。作为默认形参意味着它们在调用函数时<strong>不一定会被传递</strong>，像<code>reaction</code>，如果在调用<code>sharing</code>时没有传递形参，它就会被分配默认的字符串。当然，它们也可以在调用时被分配，并将被新的值覆盖，在这种情况下，<code>fruit</code>变成了<code>oranges</code>而不是<code>apples</code>。</p>
+<h4 id="强制性"><a href="#强制性" class="headerlink" title="强制性"></a>强制性</h4><p>另一种形参是<strong>强制性地需要赋值</strong>，举个例子，这里是<code>number</code>。这些形参在调用函数时是必须的，否则将引发错误。</p>
+<p>注意：默认形参必须出现在强制性形参之后。</p>
+<h3 id="任意位置-x2F-关键字形参"><a href="#任意位置-x2F-关键字形参" class="headerlink" title="任意位置&#x2F;关键字形参"></a>任意位置&#x2F;关键字形参</h3><p>有时，当我们不确定要发送的值的数量时，我们想传递一个可变长度的实参，这里就是任意形参发挥作用的时候。</p>
+<h4 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h4><p>任意位置形参是用一个星号（*）加上这个任意形参的变量名称来声明的。比如说</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">juicy</span>(<span class="params">filler, *fruits</span>):</span></span><br><span class="line">    <span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:</span><br><span class="line">        <span class="built_in">print</span>(fruit+<span class="string">&quot; is juicy&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Will print: </span></span><br><span class="line"><span class="comment"># Watermelon is juicy</span></span><br><span class="line"><span class="comment"># Orange is juicy</span></span><br><span class="line"><span class="comment"># Grapes is juicy</span></span><br><span class="line">juicy(<span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Watermelon&quot;</span>, <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Grapes&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>从调用者那里”收集”归于任意实参的变量的规则是，在处理了所有可被接收的实参的形参<strong>之后</strong>，这些形参在任意位置形参之前。在这个例子中，<code>&quot;Apple&quot;</code>被填入<code>filler</code>，其余的实参就被纳入<code>*fruits</code>。这种形参的特点是最后会被纳为为一个元组，可以简单地用一个循环取出来。</p>
+<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p>第二种任意形参被称为任意关键字形参。声明方式是双星号(**)它们与前一种非常相似，只是它是以<strong>关键字-值</strong>对的形式存储的，因此有”关键字”一词。来看看这个例子。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fruit_colour</span>(<span class="params">**fruits</span>):</span></span><br><span class="line">    <span class="keyword">for</span> fruit, colour <span class="keyword">in</span> fruits.items():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;&#123;&#125; is &#123;&#125;&quot;</span>.<span class="built_in">format</span>(fruit, colour))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Will print:</span></span><br><span class="line"><span class="comment"># Apple is red</span></span><br><span class="line"><span class="comment"># Orange is orange</span></span><br><span class="line"><span class="comment"># Banana is yellow</span></span><br><span class="line">fruit_colour(Apple = <span class="string">&quot;red&quot;</span>, Orange = <span class="string">&quot;orange&quot;</span>, Banana = <span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p>注意：任意形参在每个函数中必须是唯一的，并且位于形参列表的最后位置。</p>
+<hr>
+<h2 id="实际参数-Arguments"><a href="#实际参数-Arguments" class="headerlink" title="实际参数(Arguments)"></a>实际参数(Arguments)</h2><p>在调用函数时传递的值就是实参。它们也可以按分配到形参中的方式分类，分为<strong>位置</strong>和<strong>关键字</strong>。</p>
+<p>此外，实参可以被严格被语法定义为<strong>仅位置</strong>，<strong>位置性或关键字</strong>，或<strong>仅关键字</strong>。</p>
+<h3 id="位置实参-VS-关键字实参"><a href="#位置实参-VS-关键字实参" class="headerlink" title="位置实参 VS 关键字实参"></a>位置实参 VS 关键字实参</h3><p>考虑以下函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharing</span>(<span class="params">number, colour=<span class="string">&quot;red&quot;</span>, fruit=<span class="string">&quot;apples&quot;</span>, reaction=<span class="string">&quot;won&#x27;t give you any&quot;</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I have &#123;&#125; &#123;&#125; &#123;&#125;, I &#123;&#125;&quot;</span>.<span class="built_in">format</span>(number, colour, fruit, reaction))</span><br><span class="line"></span><br><span class="line">sharing(<span class="number">3</span>, <span class="string">&quot;green&quot;</span>, reaction=<span class="string">&quot;will give you some&quot;</span>, fruit=<span class="string">&quot;oranges&quot;</span>) <span class="comment"># Will output: I have 3 green oranges, I will give you some</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="位置-1"><a href="#位置-1" class="headerlink" title="位置"></a>位置</h4><p>我们看到传递实参的常规方式，将实参的确切位置固定在我们想要的形参中，例如，<code>3</code>输入进<code>number</code>，<code>green</code>输入进<code>colour</code>。它们将按照准确的顺序进行匹配型参列表的顺序。</p>
+<p>注意：假设<code>def f(a = 2, b = 4)</code>并以<code>f(5, a = 1) # Raise error</code>来调用。当前面的默认型参<code>a</code>用关键字实参分配时，你不应该用位置实参分配后面的默认实参<code>b</code>，因为编译器会认为<code>5</code>和<code>=1</code>都是在对<code>a</code>赋值。</p>
+<h4 id="关键字-1"><a href="#关键字-1" class="headerlink" title="关键字"></a>关键字</h4><p>另一种赋值方式是直接”提起”我们想要赋值的变量，然后用<code>=</code>赋值，这就是<code>reaction</code>和<code>fruit</code>的例子。使用这种实参可以忽略实参的相对位置，在上面的例子中，我把<code>reaction</code>放在<code>fruit</code>前面，尽管顺序与声明时不一样。</p>
+<p>注意：关键字实参必须在位置实参之后。</p>
+<h3 id="仅位置实参，位置实参或关键字实参，或仅关键字实参"><a href="#仅位置实参，位置实参或关键字实参，或仅关键字实参" class="headerlink" title="仅位置实参，位置实参或关键字实参，或仅关键字实参"></a>仅位置实参，位置实参或关键字实参，或仅关键字实参</h3><p>当我们想通过限制形参的赋值方式来严格区分实参时，就可以使用这种语法。下面是一个使用这三种函数的例子。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">a, b, /, c, d, *, f, e</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a+b+c+d+e+f)</span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, <span class="number">6</span>, <span class="number">5</span>, d=<span class="number">6</span>, e = <span class="number">2</span>, f = <span class="number">10</span>) <span class="comment"># Will print: 30 </span></span><br></pre></td></tr></table></figure>
+
+<p>即使看起来令人生畏，我们仍然可以在这种函数中使用之前提到的型参和实参语法（如默认型参）。</p>
+<ul>
+<li><em><strong>仅位置</strong></em>：这些实参位于列表的开始处直到<code>/</code>标记，在这个例子中是<code>a</code>和<code>b</code>。它们必须被指定为位置实参。当实参的顺序是不可忽视的，并且我们不关心实参的名字（也许没有实际意义）时，这种参数就派上用场了。</li>
+<li><em><strong>位置或关键字</strong></em>：位于<code>/</code>和<code>*</code>之间，它们可以使用位置实参或关键字实参，在这个例子中是<code>c</code>和<code>d</code>。</li>
+<li><em><strong>仅关键字</strong></em>。它们只能使用关键字赋值，如<code>e</code>和<code>f</code>。当我们想防止按位置输入数值或变量的名称具有重要意义时，请使用这种参数。</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在python中，形参和实参并不是一个很难的语法，尽管如果我们忽略了它们，它们可能会变得有点小麻烦。最后，这是一个总结性的帖子，主旨提醒我注意参数的不同类型。</p>
+
 
         <hr>
         <!-- Pager -->
@@ -474,7 +525,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">参数和参数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BD%A2%E5%BC%8F%E5%8F%82%E6%95%B0"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">形式参数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BC%BA%E5%88%B6%E5%BD%A2%E5%8F%82-VS-%E9%BB%98%E8%AE%A4%E5%BD%A2%E5%8F%82"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">强制形参 VS 默认形参</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-nav-number">1.1.1.1.</span> <span class="toc-nav-text">默认值</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BC%BA%E5%88%B6%E6%80%A7"><span class="toc-nav-number">1.1.1.2.</span> <span class="toc-nav-text">强制性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%BB%E6%84%8F%E4%BD%8D%E7%BD%AE-x2F-%E5%85%B3%E9%94%AE%E5%AD%97%E5%BD%A2%E5%8F%82"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">任意位置&#x2F;关键字形参</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BD%8D%E7%BD%AE"><span class="toc-nav-number">1.1.2.1.</span> <span class="toc-nav-text">位置</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-nav-number">1.1.2.2.</span> <span class="toc-nav-text">关键字</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E9%99%85%E5%8F%82%E6%95%B0-Arguments"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">实际参数(Arguments)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BD%8D%E7%BD%AE%E5%AE%9E%E5%8F%82-VS-%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E5%8F%82"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">位置实参 VS 关键字实参</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BD%8D%E7%BD%AE-1"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">位置</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97-1"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">关键字</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%85%E4%BD%8D%E7%BD%AE%E5%AE%9E%E5%8F%82%EF%BC%8C%E4%BD%8D%E7%BD%AE%E5%AE%9E%E5%8F%82%E6%88%96%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E5%8F%82%EF%BC%8C%E6%88%96%E4%BB%85%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E5%8F%82"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">仅位置实参，位置实参或关键字实参，或仅关键字实参</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">总结</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -496,6 +547,14 @@
             <a href="/tags/">特色标签</a>
           </h5>
           <div class="tags">
+            
+            <a class="tag" href="/tags/#Python" title="Python">Python</a>
+            
+            <a class="tag" href="/tags/#参数" title="参数">参数</a>
+            
+            <a class="tag" href="/tags/#形参" title="形参">形参</a>
+            
+            <a class="tag" href="/tags/#实参" title="实参">实参</a>
             
           </div>
         </section>
