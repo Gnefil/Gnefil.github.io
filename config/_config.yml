@@ -4,7 +4,7 @@
 
 # Site
 title: GNEFIL
-subtitle: Once the legend starts, nothing can stop composing it.
+subtitle: Once the legend starts, nothing can stop composing it
 description: It's a personal blog that anything may appear
 keywords: Gnefil, gnefil, blog, personal, 
 author: Gnefil Voltexy
@@ -29,7 +29,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: README.md
 
 # Writing
 new_post_name: :lang/:title.md # :title.md # File name of new posts
@@ -109,32 +109,35 @@ deploy:
   extend_dirs:
     - themes
     - config
+    - img
 
 
 # Internationalization (i18n) Setting
 language: # At present, only en、cn and tw are supported. You can customize the language，refer to `languages/en.yml`.
   - en
-  - cn
+  - zh
+  # - es
 langselect:
   enable: true # If open, it will automatically generation lang-select button.This button can jump in articles in different languages, but the articles must have the same name.
   options: # langselect button display options
     en: English
-    cn: 简体中文
-    # tw: 正體中文
+    zh: 简体中文
+    # es: Español
+# To create a post use: hexo n --lang en blog-name
 
 # Site settings
-SEOTitle: either thin | or die
-email: hexo-theme-livemylife@gmail.com
+SEOTitle: GNEFIL
+# email: lifeng2628qiu@gmail.com
 header-img: img/header_img/newhome_bg.jpg
-archives-img: img/header_img/archive_bg2.jpg
+archives-img: img/header_img/archive_bg.jpg
 
 # Favicon settings
-favicon: img/avatar/roguerabbit.jpg
+favicon: img/avatar/dawn.jpg
 
 
 # Signature Setup
 signature: true # show signature
-signature-img: img/signature/vincent-white.png
+signature-img: img/signature/gnefil.png
 
 
 # Wave settings
@@ -142,10 +145,10 @@ wave: true
 
 # Sidebar Settings
 sidebar: true   # whether or not using Sidebar.
-sidebar-about-description: "Fat people have no future, either thin or die..."
-sidebar-avatar: img/avatar/fatpeople.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Hi there, I am Gnefil, a computer science student, welcome! I am a learner and truth seeker, curious in almost everything, especially in IT and neuronal science. Hope you can find something interesting here too!"
+sidebar-avatar: img/avatar/1412.png    # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
-- visitor   # busuanzi: https://busuanzi.ibruce.info/
+# - visitor   # busuanzi: https://busuanzi.ibruce.info/
 - featured-tags
 - short-about
 - recent-posts
@@ -166,17 +169,23 @@ featured-condition-size: 0    # A tag will be featured if the size of it is more
 ## Friends
 friends: [
     {
-        title: "V_Vincen",
-        href: "https://v-vincen.life/"
-    },{
-        title: "Bean Tech",
-        href: "http://beantech.org"
-    },{
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
-        title: "Hexo",
-        href: "https://hexo.io/"
+        title: "Random Linear Space",
+        href: "https://kirisamer.github.io/"
+    }, {
+        title: "琳若尘泥 十里琅居",
+        href: "https://ryanxin.cn/"
+    }, {
+        title: "Neko Asakura",
+        href: "http://blog.asakura.jp.net/"
+    }, {
+       title: "无垠",
+       href: "https://flyhigher.top/"
+    }, {
+       title: "灰貓咖啡廳",
+       href: "https://graynekocafe.net/"
+    }, {
+       title: "Maggie's Rose Garden",
+       href: "https://maggieruyi.github.io/"
     }
 ]
 
@@ -225,14 +234,14 @@ scroll: true
 
 # Tip
 tip:
-  enable: true
-  # copyright: If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+  enable: false
+  copyright: If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
 
 
 # Social Share Post
 ## Docs:https://github.com/overtrue/share.js
 ##
-socialshare: true
+socialshare: false
 
 
 # Viewer config
@@ -277,6 +286,7 @@ bglinecanvas: false  # The special effects will take up a lot of cpu resorces, p
 ## Dependencies: https://github.com/V-Vincen/hexo-generator-zip-search
 ##
 search:
+  enable: false
   path: search.json
   zipPath: search.flv
   versionPath: searchVersion.json
