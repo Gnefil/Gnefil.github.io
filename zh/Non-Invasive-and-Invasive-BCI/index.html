@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+
+  <!-- redirect the page to ./en when the current path is / -->
+  
+    <script>
+      if (window.location.pathname === '/') {
+        window.location.href = './en';
+      }
+    </script>
+  
+
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s a personal blog that anything may appear"/>
+  <meta name="keyword" content=""/>
+  <link rel="shortcut icon" href="/img/avatar/dawn.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://gnefil.github.io/zh/Non-Invasive-and-Invasive-BCI/">
+  <title>
+    
+      Pros &amp; Cons of Non-Invasive and Invasive BCI - PART 1 - GNEFIL
+    
+  </title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">GNEFIL</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="zh/Non-Invasive-and-Invasive-BCI/">
+      
+      
+      <option value="en" >
+        English
+      </option>
+      
+      <option value="zh"  selected >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg');
+      --intro-header-background-image-url-page: url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/gnefil.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#生物学" title="生物学">生物学</a>
+              
+              <a class="tag" href="/tags/#神经科学" title="神经科学">神经科学</a>
+              
+              <a class="tag" href="/tags/#脑机接口" title="脑机接口">脑机接口</a>
+              
+            </div>
+            <h1>Pros &amp; Cons of Non-Invasive and Invasive BCI - PART 1</h1>
+            <h2 class="subheading">脑计算机接口（BCI）总会给人感觉是一种乌托邦式未来的科技。它是一项雄心勃勃的技术，企图将人脑与数字计算机连接起来。假如在不遥远的未来，我们可以装上脑机接口，你将如何在这两种类型中选择；非侵入性BCI或侵入性BCI？</h2>
+            <span class="meta">
+              Posted by Gnefil Voltexy on
+              2022-05-26
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">11</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="走近-BCI"><a href="#走近-BCI" class="headerlink" title="走近 BCI"></a>走近 BCI</h1><hr>
+<p>脑机接口是一种，读取且解释来自大脑意图的电信号，并通过外部设备而不是自己的身体执行，的系统，图1是一个直观的例子。目前，按传感器的放置方式，BMI的进展主要分为两种方法：非侵入性BMI和侵入性BMI。由于其普及程度的提高和突出的成果，对每种方法的特点进行概述是一个值得研究的话题。下面的文章旨在讨论每种方法带来的不同优势和劣势。与侵入性方法相比，非侵入性方法的优点是其整体范围的检测和安全性，它们在社会接受度高的情况下还是一种提供了方便性的方式，并且具有不可替代性。另一方面，侵入性方法比非侵入性方法的优势在于更高的质量和信息传输率，在优化现有技术方面有很大的潜力，而且这仍然是一个有待探索的领域。</p>
+<p><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_sketch.png" alt="BCI sketch"><br><br/></p>
+<h2 id="脑机，起源"><a href="#脑机，起源" class="headerlink" title="脑机，起源"></a>脑机，起源</h2><hr>
+<p>脑机接口，通常指BCI，也可与BMI互换的术语（Wolpaw，2013；Wolpaw, Millán和Ramsey，2020）。BCI的定义可以追溯到20年前，作为一种允许大脑与环境互动的替代系统，不遵循神经和肌肉路径（Wolpaw等人，2000）。早期BCI始于EEG相关的研究，它是无创的。但自从其在上个世纪的快速发展后，非侵入性BCI的研究也进入了研究者们的视野。<br><br/></p>
+<h3 id="非侵入式，无创"><a href="#非侵入式，无创" class="headerlink" title="非侵入式，无创"></a>非侵入式，无创</h3><p>无创BCI研究主要侧重于脑电图（EEG）。通过在参与者的头皮上粘附电极，它可以检测事件相关电位（ERP）。其实也存在与EEG类似的其他技术，但它们不适合建立BCI（例如，MEG太昂贵，fMRI有延迟感应）。在这篇讨论中，EEG将被用作非侵入性方法的参考。<br><br/></p>
+<h3 id="侵入式，有创"><a href="#侵入式，有创" class="headerlink" title="侵入式，有创"></a>侵入式，有创</h3><p>另一边，侵入式方法依赖于一种源自单细胞记录的技术，称为微电极阵列或多电极阵列（MEA）。在整篇的讨论中，MEA也被用来作为侵入式方法的参考。多电极阵列由一个小电极阵列组成，每个电极的尺寸为毫米级（如Blackrock Neurotech Utah阵列），然后通过神经外科手术打开头骨，将阵列植入大脑皮层的深层中。尽管它的植入很复杂，但由于它的潜力，许多研究集中在这一技术上，并在灵长类动物（Wessberg等人，2000；Serruya等人，2002；Velliste等人，2008）和人类（Hochberg等人，2012）产生了许多突出的结果。同样，MEA和单细胞记录也不是唯一的侵入性记录方法，但却是最合适的（例如，正电子发射断层扫描（PET）的时间分辨率很糟糕）。在空间和时间分辨率方面的更多比较可以在图2中找到，注意当目标大小和检测时间较低时，分辨率较高。</p>
+<p><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/sensoring_techniques.png" alt="Sensoring techniques"><br><br/><br><br/></p>
+<p>在浅讨了非侵入性和侵入性方法之间的区别后，它们到底有哪些优点和缺点是相互尊重的？讨论的前半部分侧重于使用非侵入性方法而不是侵入性方法的原因，而后半部分则研究相反的情况，即侵入性方法的优点与非侵入性BCI的缺点。<br><br/><br><br/></p>
+<h1 id="为什么选择无创BCI而不是有创BCI"><a href="#为什么选择无创BCI而不是有创BCI" class="headerlink" title="为什么选择无创BCI而不是有创BCI"></a>为什么选择无创BCI而不是有创BCI</h1><hr>
+<p>在PART 1的讨论中，我们将讨论为什么我们应该选择非侵入性BCI而不是侵入性BCI。</p>
+<h2 id="作为一个整体进行检测"><a href="#作为一个整体进行检测" class="headerlink" title="作为一个整体进行检测"></a>作为一个整体进行检测</h2><p>从技术角度来看，非侵入性BCI的一个优点是其全局范围的检测（Waldert，2016）。因为EEG的电极几乎粘附在头骨的任何部分，它允许对所有感兴趣的区域进行检测。然后，信号可以收集和提取整个大脑的指令特征。为什么这可能是有帮助的？例如，它有助于找到高层次的命令，而不是执行一个动作时的局部变化（Millán和Carmena, 2010）。这种检测对于理解更抽象的意图至关重要，例如某人的认知状态。</p>
+<p>这些全局信号的一个实际应用是识别与错误相关的潜力（Millán和Carmena，2010）。在一个人计划和执行一个意图的过程中，比如说伸出他的左手去抓杯子A，他可能想停止这个动作。在这个阶段，大脑会产生一个全局错误相关信号，并试图抑制当前的运动。这时全局尺度检测就很有用，它有助于识别停止信号。<br><br/></p>
+<h2 id="安全是首要任务"><a href="#安全是首要任务" class="headerlink" title="安全是首要任务"></a>安全是首要任务</h2><h4 id="非侵入性BCI的安全性"><a href="#非侵入性BCI的安全性" class="headerlink" title="非侵入性BCI的安全性"></a>非侵入性BCI的安全性</h4><p>讨论到安全问题，它是无创BCI优势的一大优势点，而这同样是有创BCI的一个主要关注点（Belkacem等，2020；He、Dong和Qi，2020；Millán和Carmena，2010；Lebedev和Nicolelis，2006；Waldert，2016）。由于患者的安全是最优先考虑的问题之一，如果没有其他说明，EEG几乎是一个默认的临床选项（Lebedev和Nicolelis，2017）。出于这个原因，在大多数临床病例中，脑电图检测比侵入性方法更受欢迎。</p>
+<h4 id="有创BCI的风险"><a href="#有创BCI的风险" class="headerlink" title="有创BCI的风险"></a>有创BCI的风险</h4><p>在非侵入性BCI中避免的第一个风险是手术风险。打开头皮意味着切开硬脑膜和桥脑，这将导致人类最重要的器官之一暴露在空气中。即使采取了极端的预防措施，伤口也可能在手术过程中受到感染或引起炎症症状。更重要的是，在选择进行手术时，失败的可能性是不可避免的。当手术的对象是大脑，后果就更严重。如果选择无创BCI，所有这些可能的后果都可以避免。</p>
+<p>此外，手术本身的风险并不是侵入性BCI的唯一安全问题。尽管手术成功，但侵入式方法仍会损害大脑。为了找到并准备好阵列的位置，插入装置会刺穿大脑皮层组织，使大脑皮层出现细微的洞孔。对于这样一个血管化的器官，对血管的损害可能是不可逆的。人们可能会想，一个健康人或受损不太严重的病人是否愿意损害他们的大脑皮层，以换取对外部设备的控制。</p>
+<p>除了大脑皮层的损伤，MEA在大脑皮层的存在也引起了多种担忧。第一个也是最直观的一个问题是，插入的设备也会伤害组织，而且在皮层中越深，干扰就越大。此外，该设备可能会阻碍和干扰当地的神经元环境，因为它是细胞的入侵者。因此，正常的过程和突触可能会被阵列打断。更重要的是，一旦阵列被植入大脑皮层，该阵列的属性将决定该BCI的长期可行性。然而，这是在研究侵入性BCI时需要解决的另一个问题。<br><br/></p>
+<h2 id="长期可行性"><a href="#长期可行性" class="headerlink" title="长期可行性"></a>长期可行性</h2><p>在探索侵入性BCI的长期降解时，存在一些常见问题（He, Dong, and Qi, 2020; Waldert, 2016）。首先是电极的生物相容性。长期以来，硅玻璃经常被用作制造电极的材料。可它的特性注定不能在大脑中长久存在。所以侵入性BCI会要求用生物相容性材料来替代，以便减少电极和组织之间的有害影响。另一个问题是，从长远来看，大脑会形成覆盖电极的疤痕组织，作为一种自我保护措施（Millán和Carmena，2010）。这层组织将大大降低信号噪声比（SNR）和记录的稳定性。信噪比是一个重要的衡量标准，因为它告诉我们收集到的信息中有多少是相关的和有用的，而哪一部分是由于背景噪音造成的。信噪比的降低显示了侵入性BCI在长期内的不稳定性。此外，在佩戴此类阵列期间，患者的常规动作可能导致微动，不可预测的微动会严重影响信号的记录。总而言之，一旦插入电极，侵入性BCI就会出现长期退化的问题。</p>
+<p>相比之下，非侵入式BCI避免了这种担忧。脑电图记录是无损的，将不必关注并试图解决这些长期退化问题，因为佩戴和更换外部电极要容易得多（Norton等人，2015）。</p>
+<br/>
+
+<p><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_transition_1.jpg" alt="Transition image"><br><br/></p>
+<h4 id="BUT，非侵入性方法正在优化！"><a href="#BUT，非侵入性方法正在优化！" class="headerlink" title="BUT，非侵入性方法正在优化！"></a>BUT，非侵入性方法正在优化！</h4><p>现在，尽管本节研究了手术损伤和长期退化，这是侵入性BCI的一些主要缺点，但目前的研究路线正在开发解决这些缺点的方案，并有一些突出的成果。</p>
+<p>Hanson等人（2019年）对当前侵入性BCI的侵扰性感到担忧，希望有一个更稳定和安全的系统。穿透大脑的管道由于其大尺寸而限制了寿命。因此，他们提出了插入设备（MEA）和插入设备之间的不同要求。前者需要像聚合物一样小而灵活，以尽可能地减少不利影响，而后者必须是硬的，以便能够穿透。基于这两个要求，他们成功地证明了 “缝纫机 “系统植入侵入性BCI的可行性。尽管如此，它仍会造成一些损害，特别是在大脑皮层的上层。</p>
+<p>在电极材料方面，现在有基于生物相容性聚合物构建的系统，并实现了柔性（Chung等人，2019）。这种材料的其他优点包括持久性、减少损伤（由于其灵活性），以及通过粘性减少微动。</p>
+<p>作为所有这些新的发展趋势的系统性聚集，Musk（2019）和Neuralink提出了一份白皮书，其中提出了一个大规模的MEA系统，其侵入性却要小得多。它使用可柔软及灵活的线，每个线都伴随着32个生物兼容的电极，连接到神经元的表面。再者，它确保了更多的表面覆盖，并通过手术机器人实现最小的损害。这台机器进行极端精确的插入，避开血管，并将出血量降到最低。最后，它允许以更宽的带宽来传输信息。<br><br/></p>
+<h2 id="社会接受度"><a href="#社会接受度" class="headerlink" title="社会接受度"></a>社会接受度</h2><h4 id="方便的-“可携带设备”"><a href="#方便的-“可携带设备”" class="headerlink" title="方便的 “可携带设备”"></a>方便的 “可携带设备”</h4><p>到目前为止，前几部分主要关注非侵入性方法的技术方面和安全性，以下部分将讨论非侵入性BCI的社会方面。关于社会对无创BCI的态度，一个显著的优势是其便利性（Belkacem等人，2020；He、Dong和Qi，2020；Millán和Carmena，2010）。相比之下，与内部植入电极的漫长准备和程序相比，外部佩戴电极所花费的时间不算什么；侵入性BCI并非 “可穿戴”。此外，人们需要花上更多的训练时间来适应MEA。 此外，与MEA的慢性特征相比，EEG记录可以是暂时性的，并且可以随时退出。例如，如果患者通过非侵入性BCI从伤害中恢复，那么他可以很快停止使用。而这种情况对使用侵入性BCI的人来说是非常困难的。</p>
+<h4 id="经济性和公众接受度"><a href="#经济性和公众接受度" class="headerlink" title="经济性和公众接受度"></a>经济性和公众接受度</h4><p>在讨论了非侵入性BCI的便利性后，这些方法的另一个重要方面是其经济和社会的接受度（He, Dong, and Qi, 2020; Waldert, 2016）。一般来说，非侵入性方法比侵入性方法更实惠，这不仅是因为部件成本，还包括手术和维护成本。因此，如果未来BCI在普通人群中普及，由于价格原因，非侵入性方法可能比侵入性方法更受欢迎。此外，如前所述，公众对非侵入性技术的接受度通常较高，因为与在大脑中植入一些设备相比，它的心理障碍较少。有趣的是，尽管终端用户高度重视非侵入性，但大多数截瘫患者在必要时愿意用侵入性方法进行康复（Collinger等人，2013）。</p>
+<h4 id="考虑到伦理问题"><a href="#考虑到伦理问题" class="headerlink" title="考虑到伦理问题"></a>考虑到伦理问题</h4><p>更重要的是，侵入性方法的一个被批评的问题是关于将设备植入人的头部是否符合道德的社会伦理争议。这是一个经常争论的问题。例如，无线MEA的可能性。由于它是无线的，数据的传输可能被黑掉，造成灾难性的后果。植入这样的东西要承担多大的责任？<br><br/></p>
+<h2 id="不可替代性"><a href="#不可替代性" class="headerlink" title="不可替代性"></a>不可替代性</h2><p>最后，EEG的一个基本和不可替代的优势是，总有一部分人无法进行侵入性植入，总有一部分大脑无法植入电极。因此，非侵入性方法拥有侵入性BCI无法企及的稳固位置（Millán和Carmena，2010）。<br><br/></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <!-- to be changed -->
+            <a href="/en/Non-Invasive-and-Invasive-BCI/" data-toggle="tooltip" data-placement="top" title="Pros & Cons of Non-Invasive and Invasive BCI - PART 1">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/zh/Introduction-to-R/" data-toggle="tooltip" data-placement="top" title="Introduction to R">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E8%B5%B0%E8%BF%91-BCI"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">走近 BCI</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%84%91%E6%9C%BA%EF%BC%8C%E8%B5%B7%E6%BA%90"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">脑机，起源</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9D%9E%E4%BE%B5%E5%85%A5%E5%BC%8F%EF%BC%8C%E6%97%A0%E5%88%9B"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">非侵入式，无创</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BE%B5%E5%85%A5%E5%BC%8F%EF%BC%8C%E6%9C%89%E5%88%9B"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">侵入式，有创</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9%E6%97%A0%E5%88%9BBCI%E8%80%8C%E4%B8%8D%E6%98%AF%E6%9C%89%E5%88%9BBCI"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">为什么选择无创BCI而不是有创BCI</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%95%B4%E4%BD%93%E8%BF%9B%E8%A1%8C%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">作为一个整体进行检测</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%89%E5%85%A8%E6%98%AF%E9%A6%96%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">安全是首要任务</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%9E%E4%BE%B5%E5%85%A5%E6%80%A7BCI%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-nav-number">2.2.0.1.</span> <span class="toc-nav-text">非侵入性BCI的安全性</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%9C%89%E5%88%9BBCI%E7%9A%84%E9%A3%8E%E9%99%A9"><span class="toc-nav-number">2.2.0.2.</span> <span class="toc-nav-text">有创BCI的风险</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%95%BF%E6%9C%9F%E5%8F%AF%E8%A1%8C%E6%80%A7"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">长期可行性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#BUT%EF%BC%8C%E9%9D%9E%E4%BE%B5%E5%85%A5%E6%80%A7%E6%96%B9%E6%B3%95%E6%AD%A3%E5%9C%A8%E4%BC%98%E5%8C%96%EF%BC%81"><span class="toc-nav-number">2.3.0.1.</span> <span class="toc-nav-text">BUT，非侵入性方法正在优化！</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A4%BE%E4%BC%9A%E6%8E%A5%E5%8F%97%E5%BA%A6"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">社会接受度</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%96%B9%E4%BE%BF%E7%9A%84-%E2%80%9C%E5%8F%AF%E6%90%BA%E5%B8%A6%E8%AE%BE%E5%A4%87%E2%80%9D"><span class="toc-nav-number">2.4.0.1.</span> <span class="toc-nav-text">方便的 “可携带设备”</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BB%8F%E6%B5%8E%E6%80%A7%E5%92%8C%E5%85%AC%E4%BC%97%E6%8E%A5%E5%8F%97%E5%BA%A6"><span class="toc-nav-number">2.4.0.2.</span> <span class="toc-nav-text">经济性和公众接受度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%80%83%E8%99%91%E5%88%B0%E4%BC%A6%E7%90%86%E9%97%AE%E9%A2%98"><span class="toc-nav-number">2.4.0.3.</span> <span class="toc-nav-text">考虑到伦理问题</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%8D%E5%8F%AF%E6%9B%BF%E4%BB%A3%E6%80%A7"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">不可替代性</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#生物学" title="生物学">生物学</a>
+            
+            <a class="tag" href="/tags/#神经科学" title="神经科学">神经科学</a>
+            
+            <a class="tag" href="/tags/#脑机接口" title="脑机接口">脑机接口</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://kirisamer.github.io/" target="_blank">Random Linear Space</a>
+          </li>
+          
+          <li>
+            <a href="https://ryanxin.cn/" target="_blank">琳若尘泥 十里琅居</a>
+          </li>
+          
+          <li>
+            <a href="http://blog.asakura.jp.net/" target="_blank">Neko Asakura</a>
+          </li>
+          
+          <li>
+            <a href="https://flyhigher.top/" target="_blank">无垠</a>
+          </li>
+          
+          <li>
+            <a href="https://graynekocafe.net/" target="_blank">灰貓咖啡廳</a>
+          </li>
+          
+          <li>
+            <a href="https://maggieruyi.github.io/" target="_blank">Maggie&#39;s Rose Garden</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Gnefil Voltexy
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://gnefil.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	</body>
+</html>
