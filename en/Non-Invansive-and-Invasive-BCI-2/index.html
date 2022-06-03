@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+
+  <!-- redirect the page to ./en when the current path is / -->
+  
+    <script>
+      if (window.location.pathname === '/') {
+        window.location.href = './en';
+      }
+    </script>
+  
+
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s a personal blog that anything may appear"/>
+  <meta name="keyword" content=""/>
+  <link rel="shortcut icon" href="/img/avatar/dawn.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://gnefil.github.io/en/Non-Invansive-and-Invasive-BCI-2/">
+  <title>
+    
+      Pros &amp; Cons of Non-Invasive and Invasive BCI - PART 2 - GNEFIL
+    
+  </title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">GNEFIL</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      English
+    </span>
+    <select id="lang-select" data-canonical="en/Non-Invansive-and-Invasive-BCI-2/">
+      
+      
+      <option value="en"  selected >
+        English
+      </option>
+      
+      <option value="zh" >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg');
+      --intro-header-background-image-url-page: url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_bg.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/gnefil.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Biology" title="Biology">Biology</a>
+              
+              <a class="tag" href="/tags/#Neuroscience" title="Neuroscience">Neuroscience</a>
+              
+              <a class="tag" href="/tags/#BCI" title="BCI">BCI</a>
+              
+            </div>
+            <h1>Pros &amp; Cons of Non-Invasive and Invasive BCI - PART 2</h1>
+            <h2 class="subheading">Brain Computer Interface (BCI) always seem to be part of an utopic future. It is an ambitious technology that connects human brain with digital computers. What if one day we want a BCI connected, how would you choose between these two main types; non-invasive BCI or invasive BCI?</h2>
+            <span class="meta">
+              Posted by Gnefil Voltexy on
+              2022-06-03
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">13</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="Why-invasive-BCI-and-not-non-invasive-BCI"><a href="#Why-invasive-BCI-and-not-non-invasive-BCI" class="headerlink" title="Why invasive BCI and not non-invasive BCI"></a>Why invasive BCI and not non-invasive BCI</h1><hr>
+<p>In summary, PART 1 reviewed the pros of non-invasive BCI and cons of invasive BCI, in the global scale detection, safeness, convenience, and public acceptance. The part that follows moves to the advantages of invasive BCI and disadvantages of non-invasive BCI, that are focusing on the quality and variety of recording, transfer rate, and the potential of each methodology.</p>
+<p><em>This is PART 2 of the discussion, we will discuss why we should go for a <em><strong>invasive</strong></em> BCI instead of non-invasive BCI.</em><br><br/></p>
+<h2 id="The-closer-the-better"><a href="#The-closer-the-better" class="headerlink" title="The closer, the better"></a>The closer, the better</h2><p>A question may raise talking about invasive methods, wondering why there is a need for invasive BCI if EEG-based BCI is already able to detect signals. The main problem is that, due to EEG’s nature, it can only record limited-quality signals, and at a low transfer rate. Due to this fact, that part of the current research has been looking at new possibilities of faster and more sensitive data, like invasive BCI.</p>
+<h3 id="Insufficient-resolution-in-EEG"><a href="#Insufficient-resolution-in-EEG" class="headerlink" title="Insufficient resolution in EEG"></a>Insufficient resolution in EEG</h3><p>As mentioned previously when introducing the methodology of each type of BCI, poor quality of the recording is often at the top of non-invasive BCI cons. The quality is limited in three aspects: low spatial resolution (Belkacem et. al, 2020; Millán and Carmena, 2010; He, Dong, and Qi, 2020), mostly low amplitude signals (Lachaux, 2012) and low-frequency signal recording (Muthukumaraswamy, 2013). EEG detects potential in low spatial resolution because it is not fine enough to record exactly a target tissue in the cortex from external recording. This is especially true when trying to explore vertically, in the deep layers of the cortex, where EEG cannot identify. Moreover, EEG receives a lower potential amplitude because it is far from the source point (inside the cortex) and the amplitude gets attenuated when travelling that distance. Likewise, the frequency bandwidth that external recording can detect also gets narrowed because tissues absorb a high frequency of signals.</p>
+<h3 id="Simply-better"><a href="#Simply-better" class="headerlink" title="Simply better"></a>Simply better</h3><p>By contrast, MEA has the advantage to be closely adhered next to the target region in the cortex. Leading to an excellent spatial resolution in all dimensions including detection in multiple layers, a higher broader amplitude range and wider frequency bandwidth (Lebedev and Nicolelis, 2006; Lebedev and Nicolelis, 2017; Millán and Carmena, 2010; He, Dong, and Qi, 2020; Waldert, 2016).<br><br/></p>
+<h2 id="Useful-information-transfer-rate"><a href="#Useful-information-transfer-rate" class="headerlink" title="Useful information transfer rate"></a>Useful information transfer rate</h2><p>In addition to the quality of data, invasive BCI also overtakes non-invasives in the transfer speed of data; both in SNR and speed in machine.</p>
+<h3 id="Signal-highway-and-city-road"><a href="#Signal-highway-and-city-road" class="headerlink" title="Signal highway and city road"></a>Signal highway and city road</h3><p>Now, turning to the information transfer rate, it is another issue in favour of invasive BCI (Wolpaw et. al, 2002). The information transfer rate is concerned with how fast the relevant information is extracted. It goes beyond SNR, as SNR can be considered individually while the former is a rate for all multiple trials and considers the retrieving process.<br><br></p>
+<p><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_transition_2.jpg" alt="Transition image"><br><br></p>
+<p>In contrast to the high transfer rate of invasive methods, non-invasive has a very poor transfer rate (Millán and Carmena, 2010). This low rate can be a result of the weak signals mixed with background electromagnetic. Furthermore, these add to the irregular conductance of the scalp and the limited number of electrodes it can place. Consequently, non-invasive EEG requires multiple trials to record the complete signal (Carpi, De Rossi and Menon, 2006). In addition, the muscle artifacts that lie in the middle of the recording pathway severely interfere with the original potentials. Another source of distortion is the extracellular environment, which affects in different degrees the transmission of signals to EEG. Altogether, the noisy effects of non-invasive BCI are very substantial and have been limiting further progress of EEG for decades (Millán and Carmena, 2010). Meanwhile, all these noises are insignificant to MEA due to its closure to the potentials, resulting in a high transfer rate in general (Waldert, 2016).<br><br/></p>
+<h2 id="Non-invasives-improve-too"><a href="#Non-invasives-improve-too" class="headerlink" title="Non-invasives improve too"></a>Non-invasives improve too</h2><p>Nonetheless, non-invasive literature did not stop looking for solutions to these problems. Wolpaw et. al (2002) proposed several optimisation lines for non-invasive trade-offs and several have been found with solutions. One of them is the reduction of the muscle artifacts, an issue which Muthukumaraswamy (2013) discussed the recommended approaches. Moreover, as the optimisation is hard on the recording side, there have been algorithms to increase the BCI performance on the signal translation side (Lotte et. al, 2007; Schalk et. al, 2004). Finally, works on the quick adaptation of non-invasive also seem to speed up the as a whole (Blankertz et. al, 2007). Overall, developments in non-invasive limitations had helped compensate for the poor performance to some degree.<br><br/></p>
+<h2 id="Future-pontential"><a href="#Future-pontential" class="headerlink" title="Future pontential"></a>Future pontential</h2><p>Now, moving to the final section, the most valuable characteristic that invasive methods have, is probably all the potential that it still has. As the investigation into BCI progresses, more and more solutions have been given to limitations on invasive BCI. For instance, several improvements have been mentioned when talking about safeness and long-term degradation in the first part. Due to the direct connections of MEA, it may be an approach to elaborate somatosensory inputs (Waldert, 2016). Because of these improvements, invasive methods have prospering potential (Lebedev and Nicolelis, 2006; Saha et. al, 2021). On the other hand, improvements in non-invasive methods have been severely limited by the external nature of EEG; even though there is optimisation in aspects away from the recording, the main obstacles to getting high quality and variety of data have not changed too much for the last 50 years (Millán and Carmena, 2010).<br><br></p>
+<p><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/bci_transition_3.jpg" alt="Transition image"></p>
+<h2 id="ECoG-semi-invasive-BCI"><a href="#ECoG-semi-invasive-BCI" class="headerlink" title="ECoG, semi-invasive BCI"></a>ECoG, semi-invasive BCI</h2><p>Interestingly, there is a method categorised as semi-invasive, which is called Electrocorticography (ECoG) or intracranial EEG (iEEG). Such a technique offers the possibility to compensate for the poor spatial resolution of EEG and the clinical risk of more invasive methods (Leuthardt et. al, 2004). Currently, it is also a research line (Khodagholy et. Al, 2015) trying to call for a balance between the advantage of both bigger branches while reducing the disadvantages.<br><br><br><br></p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><hr>
+<p>To conclude, this discussion reflected the merits and downsides of both types of BCI. Currently, they are both essential to current BCI research. Non-invasive methods have developed as a mature technique with an unreplaceable niche, whereas invasive BCI can work with the best quality of data and is still in development. Considering both methodologies, it is still a matter of suitable methods for each situation. The future trends show a high expectance of less harmful and better invasive BCI while exploring widespread opportunities in non-invasive BCI. This discussion focused on a general overview of the pros and cons of these techniques, and a possible next step is to examine the performance of real cases and their impacts.<br><br><br><br></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>References from both parts:</p>
+<ul>
+<li>Belkacem, A. N., Jamil, N., Palmer, J. A., Ouhbi, S. and Chen, C. (2020) ‘Brain computer interfaces for improving the quality of life of older adults and elderly patients’, Frontiers in Neuroscience, 14, pp. 692.</li>
+<li>Blankertz, B., Dornhege, G., Krauledat, M., Kunzmann, V., Losch, F., Curio, G. and Müller, K. (2007) ‘5 The Berlin Brain-Computer Interface: Machine Learning-Based Detection of User Speciﬁc Brain States’, Dornhege, G., del, R., Millán, J., Hinterberger, T., McFarland, D., Müller, KR (eds.) Toward Brain-Computer Interfacing, pp. 85-101.</li>
+<li>Carpi, F., De Rossi, D. and Menon, C. (2006) ‘Non invasive brain-machine interfaces’, ESA Ariadna Study, 5, pp. 6402.</li>
+<li>Chung, J. E., Joo, H. R., Fan, J. L., Liu, D. F., Barnett, A. H., Chen, S., Geaghan-Breiner, C., Karlsson, M. P., Karlsson, M. and Lee, K. Y. (2019) ‘High-density, long-lasting, and multi-region electrophysiological recordings using polymer electrode arrays’, Neuron, 101(1), pp. 21-31. e5.</li>
+<li>Collinger, J. L., Boninger, M. L., Bruns, T. M., Curley, K., Wang, W. and Weber, D. J. (2013) ‘Functional priorities, assistive technology, and brain-computer interfaces after spinal cord injury’, Journal of rehabilitation research and development, 50(2), pp. 145.</li>
+<li>Hanson, T. L., Diaz-Botia, C. A., Kharazia, V., Maharbiz, M. M. and Sabes, P. N. (2019) ‘The “sewing machine” for minimally invasive neural recording’, BioRxiv, pp. 578542.</li>
+<li>He, G., Dong, X. and Qi, M. (2020) ‘From the perspective of material science: a review of flexible electrodes for brain-computer interface’, Materials Research Express, 7(10), pp. 102001.</li>
+<li>Hochberg, L. R., Bacher, D., Jarosiewicz, B., Masse, N. Y., Simeral, J. D., Vogel, J., Haddadin, S., Liu, J., Cash, S. S. and Van Der Smagt, P. (2012) ‘Reach and grasp by people with tetraplegia using a neurally controlled robotic arm’, Nature, 485(7398), pp. 372-375.</li>
+<li>Khodagholy, D., Gelinas, J. N., Thesen, T., Doyle, W., Devinsky, O., Malliaras, G. G. and Buzsáki, G. (2015) ‘NeuroGrid: recording action potentials from the surface of the brain’, Nature neuroscience, 18(2), pp. 310-315.</li>
+<li>Lachaux, J.-P., Axmacher, N., Mormann, F., Halgren, E. and Crone, N. E. (2012) ‘High-frequency neural activity and human cognition: past, present and possible future of intracranial EEG research’, Progress in neurobiology, 98(3), pp. 279-301.</li>
+<li>Lebedev, M. A. and Nicolelis, M. A. (2006) ‘Brain–machine interfaces: past, present and future’, TRENDS in Neurosciences, 29(9), pp. 536-546.</li>
+<li>Lebedev, M. A. and Nicolelis, M. A. (2017) ‘Brain-machine interfaces: From basic science to neuroprostheses and neurorehabilitation’, Physiological reviews, 97(2), pp. 767-837.</li>
+<li>Leuthardt, E. C., Schalk, G., Wolpaw, J. R., Ojemann, J. G. and Moran, D. W. (2004) ‘A brain–computer interface using electrocorticographic signals in humans’, Journal of neural engineering, 1(2), pp. 63.</li>
+<li>Lotte, F., Congedo, M., Lécuyer, A., Lamarche, F. and Arnaldi, B. (2007) ‘A review of classification algorithms for EEG-based brain–computer interfaces’, Journal of neural engineering, 4(2), pp. R1.</li>
+<li>Millán, J. d. R. and Carmena, J. (2010) ‘Invasive or noninvasive: understanding brain-machine interface technology’, IEEE Engineering in Medicine and Biology Magazine, 29(ARTICLE), pp. 16-22.</li>
+<li>Musk, E. (2019) ‘An integrated brain-machine interface platform with thousands of channels’, Journal of medical Internet research, 21(10), pp. e16194.</li>
+<li>Muthukumaraswamy, S. (2013) ‘High-frequency brain activity and muscle artifacts in MEG&#x2F;EEG: a review and recommendations’, Frontiers in human neuroscience, 7, pp. 138.</li>
+<li>Norton, J. J., Lee, D. S., Lee, J. W., Lee, W., Kwon, O., Won, P., Jung, S.-Y., Cheng, H., Jeong, J.-W. and Akce, A. (2015) ‘Soft, curved electrode systems capable of integration on the auricle as a persistent brain–computer interface’, Proceedings of the National Academy of Sciences, 112(13), pp. 3920-3925.</li>
+<li>Saha, S., Mamun, K. A., Ahmed, K., Mostafa, R., Naik, G. R., Darvishi, S., Khandoker, A. H. and Baumert, M. (2021) ‘Progress in brain computer interface: challenges and opportunities’, Frontiers in Systems Neuroscience, pp. 4.</li>
+<li>Schalk, G., McFarland, D. J., Hinterberger, T., Birbaumer, N. and Wolpaw, J. R. (2004) ‘BCI2000: a general-purpose brain-computer interface (BCI) system’, IEEE Transactions on biomedical engineering, 51(6), pp. 1034-1043.</li>
+<li>Serruya, M. D., Hatsopoulos, N. G., Paninski, L., Fellows, M. R. and Donoghue, J. P. (2002) ‘Instant neural control of a movement signal’, Nature, 416(6877), pp. 141-142.</li>
+<li>Shih, J. J., Krusienski, D. J. and Wolpaw, J. R. ‘Brain-computer interfaces in medicine’. Mayo clinic proceedings: Elsevier, 268-279.</li>
+<li>Velliste, M., Perel, S., Spalding, M. C., Whitford, A. S. and Schwartz, A. B. (2008) ‘Cortical control of a prosthetic arm for self-feeding’, Nature, 453(7198), pp. 1098-1101.</li>
+<li>Waldert, S. (2016) ‘Invasive vs. non-invasive neuronal signals for brain-machine interfaces: will one prevail?’, Frontiers in neuroscience, 10, pp. 295.</li>
+<li>Wessberg, J., Stambaugh, C. R., Kralik, J. D., Beck, P. D., Laubach, M., Chapin, J. K., Kim, J., Biggs, S. J., Srinivasan, M. A. and Nicolelis, M. A. (2000) ‘Real-time prediction of hand trajectory by ensembles of cortical neurons in primates’, Nature, 408(6810), pp. 361-365.</li>
+<li>Wolpaw, J. R. (2013) ‘Brain–computer interfaces’, Handbook of Clinical Neurology: Elsevier, pp. 67-74.</li>
+<li>Wolpaw, J. R., Birbaumer, N., Heetderks, W. J., McFarland, D. J., Peckham, P. H., Schalk, G., Donchin, E., Quatrano, L. A., Robinson, C. J. and Vaughan, T. M. (2000) ‘Brain-computer interface technology: a review of the first international meeting’, IEEE transactions on rehabilitation engineering, 8(2), pp. 164-173.</li>
+<li>Wolpaw, J. R., Birbaumer, N., McFarland, D. J., Pfurtscheller, G. and Vaughan, T. M. (2002) ‘Brain–computer interfaces for communication and control’, Clinical neurophysiology, 113(6), pp. 767-791.</li>
+<li>Wolpaw, J. R., Millán, J. D. R. and Ramsey, N. F. (2020) ‘Brain-computer interfaces: Definitions and principles’, Handbook of clinical neurology, 168, pp. 15-23.</li>
+</ul>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/zh/Non-Invansive-and-Invasive-BCI-2/" data-toggle="tooltip" data-placement="top" title="Pros & Cons of Non-Invasive and Invasive BCI - PART 2">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Why-invasive-BCI-and-not-non-invasive-BCI"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Why invasive BCI and not non-invasive BCI</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#The-closer-the-better"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">The closer, the better</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Insufficient-resolution-in-EEG"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">Insufficient resolution in EEG</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Simply-better"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">Simply better</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Useful-information-transfer-rate"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Useful information transfer rate</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Signal-highway-and-city-road"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">Signal highway and city road</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Non-invasives-improve-too"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Non-invasives improve too</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Future-pontential"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Future pontential</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ECoG-semi-invasive-BCI"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">ECoG, semi-invasive BCI</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Conclusion"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Conclusion</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#References"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">References</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Biology" title="Biology">Biology</a>
+            
+            <a class="tag" href="/tags/#Neuroscience" title="Neuroscience">Neuroscience</a>
+            
+            <a class="tag" href="/tags/#BCI" title="BCI">BCI</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://kirisamer.github.io/" target="_blank">Random Linear Space</a>
+          </li>
+          
+          <li>
+            <a href="https://ryanxin.cn/" target="_blank">琳若尘泥 十里琅居</a>
+          </li>
+          
+          <li>
+            <a href="http://blog.asakura.jp.net/" target="_blank">Neko Asakura</a>
+          </li>
+          
+          <li>
+            <a href="https://flyhigher.top/" target="_blank">无垠</a>
+          </li>
+          
+          <li>
+            <a href="https://graynekocafe.net/" target="_blank">灰貓咖啡廳</a>
+          </li>
+          
+          <li>
+            <a href="https://maggieruyi.github.io/" target="_blank">Maggie&#39;s Rose Garden</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Gnefil Voltexy
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://gnefil.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	</body>
+</html>
