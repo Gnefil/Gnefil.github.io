@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+
+  <!-- redirect the page to ./en when the current path is / -->
+  
+    <script>
+      if (window.location.pathname === '/') {
+        window.location.href = './en';
+      }
+    </script>
+  
+
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s a personal blog that anything may appear"/>
+  <meta name="keyword" content=""/>
+  <link rel="shortcut icon" href="/img/avatar/dawn.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://gnefil.github.io/zh/Project-s-hits-Game-of-Life/">
+  <title>
+    
+      Project&#39;s hits: Game of Life - GNEFIL
+    
+  </title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">GNEFIL</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="zh/Project-s-hits-Game-of-Life/">
+      
+      
+      <option value="en" >
+        English
+      </option>
+      
+      <option value="zh"  selected >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_bg.png');
+      --intro-header-background-image-url-page: url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_bg.png');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_bg.png');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_bg.png');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_bg.png'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/gnefil.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+              
+              <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+              
+              <a class="tag" href="/tags/#clamp" title="clamp">clamp</a>
+              
+              <a class="tag" href="/tags/#canvas" title="canvas">canvas</a>
+              
+            </div>
+            <h1>Project&#39;s hits: Game of Life</h1>
+            <h2 class="subheading">项目的毒打系列是笔者在写各个项目时，学或想到的一些有意思的小技巧。本篇文章是生命游戏的项目开发中遇到的一些毒打（当然，也受益匪浅），主要内容为CSS的clamp技巧以及如何将JS canvas图案旋转到任意角度绘制。</h2>
+            <span class="meta">
+              Posted by Gnefil Voltexy on
+              2022-07-17
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">17</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="康威的生命游戏"><a href="#康威的生命游戏" class="headerlink" title="康威的生命游戏"></a>康威的生命游戏</h1><p>康威的生命游戏（Conway’s Game of Life）是一种细胞自动机。它虽然被称为游戏，却是一个零玩家的游戏。在这个自动机中，细胞们自主繁衍，进化，毁灭。它们或组成一个个有秩序的部落和”文明”，或默默地在历史中消失殆尽。笔者通过简易的HTML、CSS以及JS画出了一个动态生命游戏。玩家们扮演者至高者的角色，或冷漠地观察生命的演化，或于点击间改变一个细胞的生死以至于掌握文明的兴衰。关于这个项目的详情请移步到<a target="_blank" rel="noopener" href="https://www.gnefil.com/projects/gameOfLife/index.html">简介</a>, 以及<a target="_blank" rel="noopener" href="http://gameoflife.gnefil.com/">项目</a>本身。</p>
+<h1 id="正文（毒打）"><a href="#正文（毒打）" class="headerlink" title="正文（毒打）"></a>正文（毒打）</h1><p>喜闻乐见的毒打环节orz，这次理解比较深刻的是：</p>
+<ul>
+<li>解析<strong>CSS clamp</strong>对不同屏幕尺寸的调整</li>
+<li>在<strong>JS canvas</strong>上将一个绘制好的<strong>图案</strong>，复制并<strong>翻转</strong>到不同角度上。</li>
+</ul>
+<h2 id="CSS-clamp"><a href="#CSS-clamp" class="headerlink" title="CSS clamp"></a>CSS clamp</h2><h3 id="clamp-语法"><a href="#clamp-语法" class="headerlink" title="clamp 语法"></a>clamp 语法</h3><p>相信大家对clamp语法不是很陌生，若有必要可以查询<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/clamp">文档</a>。</p>
+<h4 id="clamp-变量"><a href="#clamp-变量" class="headerlink" title="clamp 变量"></a>clamp 变量</h4><p>CSS的clamp函数接收以下变量:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clamp(MIN, VAL, MAX)</span><br></pre></td></tr></table></figure>
+<p>然后会返还取决于这三个变量的一个数值。在这中间，如果<code>VAL</code>相当于的绝对数值不小于<code>MIN</code>且不大于<code>MAX</code>，那么clamp将返还<code>VAL</code>。</p>
+<p>在这段描述中，可以看出<code>MIN</code>和<code>MAX</code>扮演着最大值和最小值的角色。如果<code>VAL</code>小于<code>MIN</code>则采用<code>MIN</code>。同样，如果<code>VAL</code>大于<code>MAX</code>则采用<code>MAX</code>。</p>
+<p>这种功能其实可以被更早出现的<code>max()</code>，<code>min()</code>实现，甚至，clamp其实就相当于：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max(MIN, min(VAL, MAX))</span><br></pre></td></tr></table></figure>
+<p>clamp不只是将它们合并起来，并且优化了<code>max()</code>和<code>min()</code>的名字和其实际应用是反直觉的问题。比如，当我们想定一个最小单位的字体大小，可能第一个想到的是<code>min()</code>。但这样只会进一步地<strong>缩小</strong>字体大小。这种时候需要的却是<code>max()</code>以在有更小的字体大小值时，选择那个最小制定的字体大小。而clamp很好地解决了这个反直觉问题。</p>
+<h4 id="clamp-例子"><a href="#clamp-例子" class="headerlink" title="clamp 例子"></a>clamp 例子</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font-size</span>: <span class="built_in">clamp</span>(<span class="number">5rem</span>, <span class="number">10vw</span>, <span class="number">20rem</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="clamp-解析"><a href="#clamp-解析" class="headerlink" title="clamp 解析"></a>clamp 解析</h3><p>读者们在读的时候可能会有一个疑惑，<code>VAL</code>和<code>MIN</code>（以<code>MIN</code>举例但同样适用<code>MAX</code>）作为固定的CSS数值，它们怎么会时常<code>VAL</code>大<code>MIN</code>小，时常<code>VAL</code>小<code>MIN</code>大呢？<br>其实答案很简单，当这个数值取决于其他元素的大小而动态调整时，就会需要clamp来限制大小。</p>
+<p>举个例子，例如上一个clamp代码例子，<code>10vw</code>在屏幕大小为2000px宽度时，为<strong>200px</strong>。假设此时<code>1rem</code>相当于16px，那么<code>MIN</code>等于<strong>80px</strong>。不难看出此时clamp将返还<strong>200px</strong> (没有大于20rem的320px)。</p>
+<p>但如果用户在手机屏幕上进行阅览，那么屏幕大小可能缩小到400px宽度。此时<code>10vw</code>相当于<strong>40px</strong>，而<code>5rem</code>还是等于<strong>80px</strong>（在真实情况下，手机的rem其实会更小一些）。因此，根据clamp的规则，此时<code>VAL &lt; MIN</code>，所以会返还<code>MIN</code>的<strong>80px</strong>，遵守了最小字体的大小。</p>
+<p>因此可见clamp可以很便捷地限制大小，以达到动态的限制效果。但，它不仅仅可以中和过大过小，也可以更极限的超出比例拉长缩小，也是笔者在分析后得到的有趣结论之一。</p>
+<h4 id="clamp-的两种组合"><a href="#clamp-的两种组合" class="headerlink" title="clamp 的两种组合"></a>clamp 的两种组合</h4><p>到现在为止，不知道各位有没有注意到，笔者举的clamp例子的变量都是这个形式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clamp(固定值，比例，固定值)</span><br></pre></td></tr></table></figure>
+<p>那么如果我们以这个形式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clamp(比例，固定值，比例)</span><br></pre></td></tr></table></figure>
+<p>使用clamp的话会有什么奇特的效果呢？为此，我将这两种不同效果的clamp分别称呼为稳定clamp和变化clamp。<br><br></p>
+<h5 id="稳定-clamp"><a href="#稳定-clamp" class="headerlink" title="稳定 clamp"></a>稳定 clamp</h5><p>稳定clamp其实是比较常规的clamp用法，例如用于稳定字体大小，图片大小。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clamp(固定值，比例，固定值)</span><br></pre></td></tr></table></figure>
+<p>由于有着固定的数值限制，这个数值一般不会因为父元素&#x2F;屏幕的大小而有很剧烈的变化。例如在小屏幕手机的时候不会因为屏幕的小而变得太小，也不会因为大型电脑屏幕而变得过大。<strong>因此稳定clamp十分适合套用在重要的，需要稳定表现的元素，</strong> 就比如字体，图片。<br><br></p>
+<h5 id="变化-clamp"><a href="#变化-clamp" class="headerlink" title="变化 clamp"></a>变化 clamp</h5><p>变化clamp的需求场景比较少，例子包括margin，padding和border。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clamp(比例，固定值，比例)</span><br></pre></td></tr></table></figure>
+<p>在优先固定值的情况下，意味着就算不同屏幕下，这个元素的大小也会保持。在一些情况下，这个clamp也适用图片等需要固定大小的元素。但在多数情况下，我们可以充分利用两头限制的比例大小，而优先的固定值仅仅作为一个触发线，来分割大屏幕需要的比例和小屏幕需要的比例。</p>
+<p>稳定clamp的出现已经解决了让两头的比例趋近于平衡的中间值，因此变化clamp的用处将是相反的，也就是加大两头的差别。这意味着在小屏幕的时候元素会变得比比例的大小还要小，在大屏幕，将会比贴合比例的大还要大。<strong>因此变化clamp十分适合套用在不这么重要的，次要的，在屏幕较小时让出空间给更重要的元素发挥的，屏幕较大的时候可以填补空白的，元素，</strong> 比如margin，padding和border。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>CSS clamp是一个相当适用的函数，可以在不同需求下变成不同的动态调整。如果想要研究最正确的clamp数值，还需要比例和固定值混杂的变量以达到最完美的表现。具体的数值可以参考网上关于clamp的最完美贴合需求参数相关关键字的搜索文章。<br><br><br><br></p>
+<h2 id="JS-canvas-图案翻转"><a href="#JS-canvas-图案翻转" class="headerlink" title="JS canvas 图案翻转"></a>JS canvas 图案翻转</h2><p>在表现生命游戏的选择上，我使用了HTML的canvas来用JS呈现动态视觉化。所以画细胞的时候也用到了canvas里面的绘画功能。那么每个生命该怎么表现呢笔者在几分钟的思考后决定使用一圈叶子来表示细胞。结果图：<br><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_cell.png" alt="Cells in game of life"></p>
+<p>具体怎么实现呢？画出一整个细胞的函数<code>drawCell()</code>是这样的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Draw whole cell</span></span><br><span class="line">drawCell = <span class="function">(<span class="params">color, size</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Localise center of the diagram</span></span><br><span class="line">    <span class="comment">// i and j are attributes of each cell from Cell class</span></span><br><span class="line">    <span class="comment">// grid_size is the length of the square sides that each cell is in</span></span><br><span class="line">    <span class="keyword">const</span> x_center = (<span class="built_in">this</span>.i + <span class="number">0.5</span>) * grid_size;</span><br><span class="line">    <span class="keyword">const</span> y_center = (<span class="built_in">this</span>.j + <span class="number">0.5</span>) * grid_size;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Draw each leaf</span></span><br><span class="line">    <span class="built_in">this</span>.drawLeaf(<span class="built_in">Math</span>.PI / <span class="number">4</span>, x_center, y_center, size, color);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// As many directions as wanted, towards different angle</span></span><br><span class="line">    <span class="built_in">this</span>.drawLeaf(<span class="built_in">Math</span>.PI * <span class="number">3</span> / <span class="number">4</span>, x_center, y_center, size, color);</span><br><span class="line">    <span class="built_in">this</span>.drawLeaf(<span class="built_in">Math</span>.PI * <span class="number">5</span> / <span class="number">4</span>, x_center, y_center, size, color);</span><br><span class="line">    <span class="built_in">this</span>.drawLeaf(<span class="built_in">Math</span>.PI * <span class="number">7</span> / <span class="number">4</span>, x_center, y_center, size, color);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">this</span>.drawLeaf(<span class="number">0</span>, x_center, y_center, size, color);</span><br><span class="line">    <span class="built_in">this</span>.drawLeaf(<span class="built_in">Math</span>.PI/<span class="number">2</span>, x_center, y_center, size, color);</span><br><span class="line">    <span class="built_in">this</span>.drawLeaf(<span class="built_in">Math</span>.PI, x_center, y_center, size, color);</span><br><span class="line">    <span class="built_in">this</span>.drawLeaf(<span class="built_in">Math</span>.PI*<span class="number">3</span>/<span class="number">2</span>, x_center, y_center, size, color);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们首先需要画出一片叶子，也就是一个基础单位。再然后就可以呼叫这片叶子函数并旋转到不同角度。</p>
+<h3 id="画一片叶子"><a href="#画一片叶子" class="headerlink" title="画一片叶子"></a>画一片叶子</h3><p>在<code>drawCell()</code>这个函数中，<code>drawLeaf()</code>被多次呼叫，来构成多个叶子簇拥的细胞图案。而<code>drawLeaf()</code>是这个样子的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Draw single leaf</span></span><br><span class="line">drawLeaf = <span class="function">(<span class="params">deg, x_center, y_center, size, color</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Draw 1 leave</span></span><br><span class="line">        <span class="keyword">let</span> p1 = &#123;<span class="attr">x</span>: x_center, <span class="attr">y</span>: y_center - <span class="number">1</span>/<span class="number">2</span>*size&#125;;</span><br><span class="line">        <span class="keyword">let</span> c1 = &#123;<span class="attr">x</span>: x_center + <span class="number">1</span> / <span class="number">3</span> * size, <span class="attr">y</span>: y_center - <span class="number">1</span> / <span class="number">6</span> * size&#125;;</span><br><span class="line">        <span class="keyword">let</span> p2 = &#123;<span class="attr">x</span>: x_center - <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center - <span class="number">1</span> / <span class="number">6</span> * size&#125;;</span><br><span class="line">        <span class="keyword">let</span> c2 = &#123;<span class="attr">x</span>: x_center + <span class="number">1</span> / <span class="number">3</span> * size, <span class="attr">y</span>: y_center - <span class="number">1</span> / <span class="number">6</span> * size&#125;;</span><br><span class="line">        <span class="keyword">let</span> p3 = &#123;<span class="attr">x</span>: x_center - <span class="number">1</span>/<span class="number">9</span> * size, <span class="attr">y</span>: y_center&#125;;</span><br><span class="line">        <span class="keyword">let</span> p4 = &#123;<span class="attr">x</span>: x_center + <span class="number">1</span>/<span class="number">16</span> * size, <span class="attr">y</span>: y_center&#125;;</span><br><span class="line">        <span class="keyword">let</span> c4 = &#123;<span class="attr">x</span>: x_center - <span class="number">1</span>/<span class="number">3</span> * size, <span class="attr">y</span>: y_center - <span class="number">1</span>/<span class="number">6</span> * size&#125;;</span><br><span class="line">        <span class="keyword">let</span> p5 = &#123;<span class="attr">x</span>: x_center, <span class="attr">y</span>: y_center - <span class="number">1</span>/<span class="number">3</span> * size&#125;;</span><br><span class="line">        <span class="keyword">let</span> c5 = &#123;<span class="attr">x</span>: x_center + <span class="number">1</span>/<span class="number">12</span> * size, <span class="attr">y</span>: y_center - <span class="number">5</span>/<span class="number">12</span> * size&#125;;</span><br><span class="line"></span><br><span class="line">        ctx.beginPath();</span><br><span class="line">        ctx.moveTo(p1.x, p1.y);</span><br><span class="line">        <span class="built_in">this</span>.drawCurve(p1, p2, c1, <span class="number">1</span> / <span class="number">2</span> * size);</span><br><span class="line">        <span class="built_in">this</span>.drawCurve(p2, p3, c2, <span class="number">1</span> / <span class="number">2</span> * size);</span><br><span class="line">        ctx.lineTo(p4.x, p4.y);</span><br><span class="line">        <span class="built_in">this</span>.drawCurve(p4, p5, c4, <span class="number">1</span> / <span class="number">2</span> * size);</span><br><span class="line">        <span class="built_in">this</span>.drawCurve(p1, p5, c5, <span class="number">1</span> / <span class="number">12</span> * size);</span><br><span class="line">        ctx.fillStyle = color;</span><br><span class="line">        ctx.fill();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Draw the stems</span></span><br><span class="line">        ctx.beginPath()</span><br><span class="line">        ctx.moveTo(p1.x, p1.y);</span><br><span class="line">        ctx.lineTo(x_center, y_center);</span><br><span class="line">        ctx.strokeStyle = <span class="built_in">this</span>.alive ? colors.vein_alive : (<span class="built_in">this</span>.next_gen &lt; <span class="number">3</span> ? colors.vein_under_population : colors.vein_over_population);</span><br><span class="line">        ctx.stroke();</span><br><span class="line">        ctx.closePath();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果出来是这样的：<br><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_leaf.png" alt="One leaf in game of life"></p>
+<p>这个例子如果跑起来，将只适用用于一片叶子，稍后我们看看怎么将它复制旋转。现在先简单地讲解一下怎么构造出一片叶子。</p>
+<h4 id="点，线，面"><a href="#点，线，面" class="headerlink" title="点，线，面"></a>点，线，面</h4><p>笔者用的这种方法比较原始。可能更好的办法是直接使用画好的图片，再让canva自己画出一模一样的图片。</p>
+<p>为了画出这片叶子，其中间的步骤并不难。先是假定我们要画的是朝上方的叶子，第一步是算出每一个用于勾勒轮廓的<strong>关键点</strong>。什么是关键点呢？指的是在画轮廓线的时候会出现变化的点。比如说，如果我们要画一个正方形的边，那么它的四个角就是关键点，因为线在这个点上会出现变化。同样，这个也适用于弧形，两个不同弧形的交接处也是一个关键点。在这个例子中<code>p1</code>到<code>p2</code>描绘的是左上方的弧形，而<code>p2</code>到<code>p3</code>勾勒的是另一个弧形，有着不同的圆心<code>c1</code>和<code>c2</code> (p.s. 现在是一样的了，但之前的的草稿图案中是两个不同的圆心，而且分成两部分比较直观，所以保留两个圆心)。</p>
+<p><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_points.png" alt="Points in leaves"></p>
+<p>关于关键点的坐标系，笔者采用了各自X，Y轴的中心点作为每一个细胞的(0, 0)坐标。上方为+y，下方为-y，左边是-x，右边是+x这样有利于之后的根据中心点复制旋转其他叶子，毕竟旋转的轴心就是X，Y轴的中心点。当然，也可以采用左上角的角落作为坐标系的中心点。之后就是以各自中心点找到各个关键点的相对坐标，是一个比较冗长且需要尝试的步骤。</p>
+<p>使用这种方法后，接下来可以用不同的关键点连出一段段<strong>线</strong>。例如<code>drawCurve()</code>虽然是一个Cell类的自定义函数，里面其实就是一个<code>ctx.arc()</code>，一个用于画曲线的自带函数。还有比如<code>lineTo()</code>也是画线的函数，它画的就是基础直线。</p>
+<p>最后就是将线连起来的面积填充成完整的叶子的一<strong>面</strong>。填充可以使用<code>ctx.fill()</code>来做到。最后的最后笔者还加了一些线当作叶脉，作为点缀。</p>
+<h3 id="画多片叶子"><a href="#画多片叶子" class="headerlink" title="画多片叶子"></a>画多片叶子</h3><p>复制并粘贴来画多片叶子其实并不难，只需要多呼叫几次<code>drawLeaf()</code>就可以了。问题是如何有规律的旋转呢？</p>
+<p>对于这种需要角度和周期性的方法，笔者通常第一想到的就是三角函数。如果用sin和cos来有规律的加，减，0，1，那是不是能够达到这种效果呢？答案是肯定的。</p>
+<p>起初，笔者想到的是这种方法：假设每一个点有x和y偏移量，称dx，dy，可以是正或负或无。这个偏移量d是和中轴的差，比如<code>p1</code>的dy就是-1&#x2F;2.暂时忽略<code>size</code>因为它的值是不变的。那么就可以用cos和sin来周期性地增加减少d。比如上叶子的<code>p1</code>-dx在右叶子上应该是+dy，这个画面应该不难想象，各位读者可以试试看。</p>
+<h4 id="天真的尝试"><a href="#天真的尝试" class="headerlink" title="天真的尝试"></a>天真的尝试</h4><p>每一个点的dx和dy，在不同的角度中都会变化，到最后甚至dx跑到y上，dy跑到x上。这是为了保证叶子的坐标是具有周期性的。当然，当dx和dy在不同角度下已经不一定是表示x和y的偏移量，那我们就给它们换一个名称。我们称原始叶子的x偏移量<strong>d1</strong>而不再是dx，y偏移量<strong>d2</strong>而不再是dy。</p>
+<p>这个周期性和偏移量听起来可能很绕，用表格表示就是：</p>
+<table>
+<thead>
+<tr>
+<th>90º leaf</th>
+<th>xd1</th>
+<th>xd2</th>
+<th>yd1</th>
+<th>yd2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Scale</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>这个应该不难理解。在最原始的90°叶子上，x有多少d1，多少d2？因为我们已经定义过<strong>原始叶子的x偏移量是d1，y偏移量是d2</strong>了，所以x有完整d1而无d2。而y有完整d2而无d1。</p>
+<p>于是笔者很理所当然的觉得剩下的角度规律应该是这样的：</p>
+<table>
+<thead>
+<tr>
+<th>Any leaf</th>
+<th>xd1</th>
+<th>xd2</th>
+<th>yd1</th>
+<th>yd2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Degrees</td>
+<td>sin</td>
+<td>cos</td>
+<td>cos</td>
+<td>sin</td>
+</tr>
+</tbody></table>
+<p>就有了以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Attempt for multiple leaves</span></span><br><span class="line">drawLeaf = <span class="function">(<span class="params">deg, x_center, y_center, size, color</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> cos = <span class="built_in">Math</span>.cos(deg);</span><br><span class="line">    <span class="keyword">let</span> sin = <span class="built_in">Math</span>.sin(deg);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Draw 1 leave</span></span><br><span class="line">    <span class="comment">// let p1 = &#123;x: x_center, y: y_center - 1/2*size&#125;;</span></span><br><span class="line">    <span class="comment">// let c1 = &#123;x: x_center + 1 / 3 * size, y: y_center - 1 / 6 * size&#125;;</span></span><br><span class="line">    <span class="comment">// let p2 = &#123;x: x_center - 1 / 6 * size, y: y_center - 1 / 6 * size&#125;;</span></span><br><span class="line">    <span class="comment">// let c2 = &#123;x: x_center + 1 / 3 * size, y: y_center - 1 / 6 * size&#125;;</span></span><br><span class="line">    <span class="comment">// let p3 = &#123;x: x_center - 1/9 * size, y: y_center&#125;;</span></span><br><span class="line">    <span class="comment">// let p4 = &#123;x: x_center + 1/16 * size, y: y_center&#125;;</span></span><br><span class="line">    <span class="comment">// let c4 = &#123;x: x_center - 1/3 * size, y: y_center - 1/6 * size&#125;;</span></span><br><span class="line">    <span class="comment">// let p5 = &#123;x: x_center, y: y_center - 1/3 * size&#125;;</span></span><br><span class="line">    <span class="comment">// let c5 = &#123;x: x_center + 1/12 * size, y: y_center - 5/12 * size&#125;;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Draw leaf depending on degrees</span></span><br><span class="line">    <span class="keyword">let</span> p1 = &#123; <span class="attr">x</span>: x_center - sin * <span class="number">1</span> / <span class="number">2</span> * size, <span class="attr">y</span>: y_center - cos * <span class="number">1</span> / <span class="number">2</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> c1 = &#123; <span class="attr">x</span>: x_center + cos * <span class="number">1</span> / <span class="number">3</span> * size - sin * <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center + sin * <span class="number">1</span> / <span class="number">3</span> * size - cos * <span class="number">1</span> / <span class="number">6</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> p2 = &#123; <span class="attr">x</span>: x_center - <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center - <span class="number">1</span> / <span class="number">6</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> c2 = &#123; <span class="attr">x</span>: x_center + cos * <span class="number">1</span> / <span class="number">3</span> * size - sin * <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center + sin * <span class="number">1</span> / <span class="number">3</span> * size - cos * <span class="number">1</span> / <span class="number">6</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> p3 = &#123; <span class="attr">x</span>: x_center - cos * <span class="number">1</span> / <span class="number">9</span> * size, <span class="attr">y</span>: y_center - sin * <span class="number">1</span> / <span class="number">9</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> p4 = &#123; <span class="attr">x</span>: x_center + cos * <span class="number">1</span> / <span class="number">16</span> * size, <span class="attr">y</span>: y_center + sin * <span class="number">1</span> / <span class="number">16</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> c4 = &#123; <span class="attr">x</span>: x_center - cos * <span class="number">1</span> / <span class="number">3</span> * size - sin * <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center - sin * <span class="number">1</span> / <span class="number">3</span> * size - cos * <span class="number">1</span> / <span class="number">6</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> p5 = &#123; <span class="attr">x</span>: x_center - sin * <span class="number">1</span> / <span class="number">3</span> * size, <span class="attr">y</span>: y_center - cos * <span class="number">1</span> / <span class="number">3</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> c5 = &#123; <span class="attr">x</span>: x_center + cos * <span class="number">1</span> / <span class="number">12</span> * size - sin * <span class="number">5</span> / <span class="number">12</span> * size, <span class="attr">y</span>: y_center + sin * <span class="number">1</span> / <span class="number">12</span> * size - cos * <span class="number">5</span> / <span class="number">12</span> * size &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>但是</strong>，一旦尝试用这种写法的画的话，会出现错误，叶子根本就不像是叶子，各种坐标像是紊乱了。讲道理，当写代码解析到这里，笔者发现这里的叶子竟然是不对的，心里是崩溃的。那铁定不能放弃的啊，于是继续尝试，比如将sin和cos调换，把初始角度设成0º，等等等等，但就是不行。到最后都有点想放弃，直接用方块完事了。这时候笔者尝试把对的，完整的角度表格写出来，结果竟然是这样的。</p>
+<h4 id="最终的规律"><a href="#最终的规律" class="headerlink" title="最终的规律"></a>最终的规律</h4><p>当笔者把每一个角度对应的值写出来后，它长这个样子：</p>
+<table>
+<thead>
+<tr>
+<th>Degrees</th>
+<th>xd1</th>
+<th>xd2</th>
+<th>yd1</th>
+<th>yd2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>-1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>90</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>180</td>
+<td>0</td>
+<td>1</td>
+<td>-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>270</td>
+<td>-1</td>
+<td>0</td>
+<td>0</td>
+<td>-1</td>
+</tr>
+</tbody></table>
+<p>比较一下后，可以发现关键的三角函数并不是：</p>
+<table>
+<thead>
+<tr>
+<th>Any leaf</th>
+<th>xd1</th>
+<th>xd2</th>
+<th>yd1</th>
+<th>yd2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Degrees</td>
+<td>sin</td>
+<td>cos</td>
+<td>cos</td>
+<td>sin</td>
+</tr>
+</tbody></table>
+<p>而是</p>
+<table>
+<thead>
+<tr>
+<th>Any leaf</th>
+<th>xd1</th>
+<th>xd2</th>
+<th>yd1</th>
+<th>yd2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Degrees</td>
+<td>sin</td>
+<td>-cos</td>
+<td>cos</td>
+<td>sin</td>
+</tr>
+</tbody></table>
+<p>因为cos和-cos在90º都等于0，而笔者忽略了-sin和-cos这个部分，才导致代码一直画的不对。所以立马拿了其他角度来核对，结果发现每个角度的d1和d2都完美地对上了！</p>
+<p>笔者立马用在代码里，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Abstracted for all degrees</span></span><br><span class="line">drawLeaf = <span class="function">(<span class="params">deg, x_center, y_center, size, color</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Need in x and y, take angle of leaf&#x27;s tip as the theta</span></span><br><span class="line">    <span class="comment">// subset meaning d</span></span><br><span class="line">    <span class="comment">// x: subset1 -&gt; sin</span></span><br><span class="line">    <span class="comment">// x: subset2 -&gt; -cos</span></span><br><span class="line">    <span class="comment">// y: subset2 -&gt; sin</span></span><br><span class="line">    <span class="comment">// y: subset1 -&gt; cos</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> sin = <span class="built_in">Math</span>.sin(deg);</span><br><span class="line">    <span class="keyword">const</span> cos = <span class="built_in">Math</span>.cos(deg);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> p1 = &#123; <span class="attr">x</span>: x_center + sin * <span class="number">0</span> - (-cos) * <span class="number">1</span> / <span class="number">2</span> *  size, <span class="attr">y</span>: y_center - sin * <span class="number">1</span> / <span class="number">2</span> * size + cos * <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">let</span> c1 = &#123; <span class="attr">x</span>: x_center + sin * <span class="number">1</span> / <span class="number">3</span> * size - (-cos) * <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center - sin * <span class="number">1</span> / <span class="number">6</span> * size + cos * <span class="number">1</span> / <span class="number">3</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> p2 = &#123; <span class="attr">x</span>: x_center - sin * <span class="number">1</span> / <span class="number">6</span> * size - (-cos) * <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center - sin * <span class="number">1</span> / <span class="number">6</span> * size - cos * <span class="number">1</span> / <span class="number">6</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> c2 = &#123; <span class="attr">x</span>: x_center + sin * <span class="number">1</span> / <span class="number">3</span> * size - (-cos) * <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center - sin * <span class="number">1</span> / <span class="number">6</span> * size + cos * <span class="number">1</span> / <span class="number">3</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> p3 = &#123; <span class="attr">x</span>: x_center - sin * <span class="number">1</span> / <span class="number">9</span> * size + (-cos) * <span class="number">0</span>, <span class="attr">y</span>: y_center + sin * <span class="number">0</span> - cos * <span class="number">1</span> / <span class="number">9</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> p4 = &#123; <span class="attr">x</span>: x_center + sin * <span class="number">1</span> / <span class="number">16</span> * size + (-cos) * <span class="number">0</span>, <span class="attr">y</span>: y_center + sin * <span class="number">0</span> + cos * <span class="number">1</span> / <span class="number">16</span> *  size &#125;;</span><br><span class="line">    <span class="keyword">let</span> c4 = &#123; <span class="attr">x</span>: x_center - sin * <span class="number">1</span> / <span class="number">3</span> * size - (-cos) * <span class="number">1</span> / <span class="number">6</span> * size, <span class="attr">y</span>: y_center - sin * <span class="number">1</span> / <span class="number">6</span> * size - cos * <span class="number">1</span> / <span class="number">3</span> * size &#125;;</span><br><span class="line">    <span class="keyword">let</span> p5 = &#123; <span class="attr">x</span>: x_center + sin * <span class="number">0</span> - (-cos) * <span class="number">1</span> / <span class="number">3</span> *  size, <span class="attr">y</span>: y_center - sin * <span class="number">1</span> / <span class="number">3</span> * size + cos * <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">let</span> c5 = &#123; <span class="attr">x</span>: x_center + sin * <span class="number">1</span> / <span class="number">12</span> * size - (-cos) * <span class="number">5</span> / <span class="number">12</span> * size, <span class="attr">y</span>: y_center - sin * <span class="number">5</span> / <span class="number">12</span> * size + cos * <span class="number">1</span> / <span class="number">12</span> * size &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成功地得到想要地叶子细胞！<br><img src="https://raw.githubusercontent.com/Gnefil/Gnefil.github.io/src/img/post_images/game_of_life_cell.png" alt="Cells in game of life"></p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>在这个JavaScript canvas篇，我们学会了如何用三角函数来旋转复制一个特定图案。如果角度需求和坐标系是中心点的，可以直接用笔者最后得出的规律表格，直接使用这些三角函数即可。不过更重要的是这个可以适用于不同场景，不同角度。本文介绍了一个思路，一个可以被借鉴然后优化的例子。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>总体来说，笔者在写这个项目的时候有面临挑战，也学会了不懈坚持，更享受了过程。途中学到了不少东西，总结出来希望能够给读者新的启发。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/en/Project-s-hits-Game-of-Life/" data-toggle="tooltip" data-placement="top" title="Project's hits: Game of Life">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%BA%B7%E5%A8%81%E7%9A%84%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">康威的生命游戏</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A3%E6%96%87%EF%BC%88%E6%AF%92%E6%89%93%EF%BC%89"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">正文（毒打）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CSS-clamp"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">CSS clamp</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#clamp-%E8%AF%AD%E6%B3%95"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">clamp 语法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#clamp-%E5%8F%98%E9%87%8F"><span class="toc-nav-number">2.1.1.1.</span> <span class="toc-nav-text">clamp 变量</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#clamp-%E4%BE%8B%E5%AD%90"><span class="toc-nav-number">2.1.1.2.</span> <span class="toc-nav-text">clamp 例子</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#clamp-%E8%A7%A3%E6%9E%90"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">clamp 解析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#clamp-%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%BB%84%E5%90%88"><span class="toc-nav-number">2.1.2.1.</span> <span class="toc-nav-text">clamp 的两种组合</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%A8%B3%E5%AE%9A-clamp"><span class="toc-nav-number">2.1.2.1.1.</span> <span class="toc-nav-text">稳定 clamp</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%8F%98%E5%8C%96-clamp"><span class="toc-nav-number">2.1.2.1.2.</span> <span class="toc-nav-text">变化 clamp</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">小结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JS-canvas-%E5%9B%BE%E6%A1%88%E7%BF%BB%E8%BD%AC"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">JS canvas 图案翻转</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%94%BB%E4%B8%80%E7%89%87%E5%8F%B6%E5%AD%90"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">画一片叶子</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%82%B9%EF%BC%8C%E7%BA%BF%EF%BC%8C%E9%9D%A2"><span class="toc-nav-number">2.2.1.1.</span> <span class="toc-nav-text">点，线，面</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%94%BB%E5%A4%9A%E7%89%87%E5%8F%B6%E5%AD%90"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">画多片叶子</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%A4%A9%E7%9C%9F%E7%9A%84%E5%B0%9D%E8%AF%95"><span class="toc-nav-number">2.2.2.1.</span> <span class="toc-nav-text">天真的尝试</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%9C%80%E7%BB%88%E7%9A%84%E8%A7%84%E5%BE%8B"><span class="toc-nav-number">2.2.2.2.</span> <span class="toc-nav-text">最终的规律</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">小结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BB%93%E5%B0%BE"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">结尾</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+            
+            <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+            
+            <a class="tag" href="/tags/#clamp" title="clamp">clamp</a>
+            
+            <a class="tag" href="/tags/#canvas" title="canvas">canvas</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://kirisamer.github.io/" target="_blank">Random Linear Space</a>
+          </li>
+          
+          <li>
+            <a href="https://ryanxin.cn/" target="_blank">琳若尘泥 十里琅居</a>
+          </li>
+          
+          <li>
+            <a href="http://blog.asakura.jp.net/" target="_blank">Neko Asakura</a>
+          </li>
+          
+          <li>
+            <a href="https://flyhigher.top/" target="_blank">无垠</a>
+          </li>
+          
+          <li>
+            <a href="https://graynekocafe.net/" target="_blank">灰貓咖啡廳</a>
+          </li>
+          
+          <li>
+            <a href="https://maggieruyi.github.io/" target="_blank">Maggie&#39;s Rose Garden</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Gnefil Voltexy
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://gnefil.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+	</body>
+</html>
